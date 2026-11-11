@@ -123,7 +123,7 @@ class Lzcrs_List_Table extends WP_List_Table {
 			case 'total':
 				return '<strong>' . esc_html( $item['total'] ) . '</strong>';
 			case 'band':
-				return '<span class="lzcrs-band ' . esc_attr( $item['band'] ) . '">' . esc_html( Lzcrs_Labels::band( $item['band'] ) ) . '</span>';
+				return '<span class="lzcrs-badge ' . esc_attr( in_array( $item['band'], Lzcrs_Db::BANDS, true ) ? $item['band'] : 'neutral' ) . '">' . esc_html( Lzcrs_Labels::band( $item['band'] ) ) . '</span>';
 			case 'pathway':
 				return esc_html( Lzcrs_Labels::pathway( $item['pathway'] ) );
 			case 'status':

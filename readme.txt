@@ -35,7 +35,8 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
 * **CRS calculator** for single applicants, based on IRCC's current CRS criteria (job-offer points removed since March 2025).
 * **Score gap plan:** shows each visitor which changes would raise their score the most, and whether a change reaches the cutoff.
 * **Leads in WordPress:**
-  * a CRS Leads screen with score, Hot, Warm or Cold rating, and likely pathway (CEC, FSW, PNP);
+  * a Lawzeek dashboard showing leads this month, hot leads and average score;
+  * a Leads screen with score, Hot, Warm or Cold rating, and likely pathway (CEC, FSW, PNP);
   * search, filters and status tracking;
   * CSV export.
 * **Email alert** for every new lead.
@@ -58,6 +59,10 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
   * scripts load only on pages that show the calculator.
 * **Translation-ready.**
 
+= Source code =
+
+The admin screens are styled with Tailwind CSS. The source file is `assets/src/admin.css` and the config is `assets/src/tailwind.config.js`. The built file, `assets/css/admin.css`, is left unminified. Every rule is scoped to the plugin's own screens, so the rest of WordPress is unaffected. The front-end calculator uses plain CSS and JavaScript, with no build step.
+
 = Disclaimer =
 
 The calculator gives an estimate, not legal advice. The official score is calculated by IRCC when a candidate submits an Express Entry profile. Keep the "recent cutoff" setting up to date after each draw.
@@ -76,9 +81,9 @@ This plugin works fully on its own and never requires an account.
 == Installation ==
 
 1. Install and activate the plugin (Plugins → Add New → search "Lawzeek CRS Calculator").
-2. Go to **CRS Leads → Settings**. Check the email that receives new leads, and set the recent Express Entry cutoff.
+2. Go to **Lawzeek → Settings** in the admin menu. Check the email that receives new leads, and set the recent Express Entry cutoff.
 3. Edit any page and add the **CRS Calculator** block, or paste `[lawzeek_crs]`.
-4. Visit the page and try it. Your test appears under **CRS Leads**.
+4. Visit the page and try it. Your test appears under **Lawzeek → Leads**.
 
 == Frequently Asked Questions ==
 
@@ -104,7 +109,7 @@ The plugin uses WordPress's built-in `wp_mail()`. Many hosts need an SMTP plugin
 
 = What happens to my leads if I delete the plugin? =
 
-They are kept, unless you tick "Also delete all leads and settings" under CRS Leads → Settings before deleting the plugin.
+They are kept, unless you tick "Also delete all leads and settings" under Lawzeek → Settings before deleting the plugin.
 
 = How is spam handled? =
 
@@ -114,9 +119,10 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 
 1. The calculator on a website: five short steps.
 2. The result: estimated score, distance to the cutoff and the fastest ways to raise it.
-3. CRS Leads in the WordPress dashboard.
-4. A lead's profile, score breakdown and status.
-5. Settings.
+3. The Lawzeek dashboard: leads this month, hot leads, average score and a getting-started checklist.
+4. Leads list with Hot, Warm and Cold ratings, search, filters and CSV export.
+5. A lead's profile, score breakdown, status and consent record.
+6. Settings.
 
 == Changelog ==
 

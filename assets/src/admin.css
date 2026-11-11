@@ -1,0 +1,96 @@
+/*
+ * Source for assets/css/admin.css (Lawzeek admin screens). Built with Tailwind CSS 3.
+ * Utilities are prefixed "lz-" and scoped to .lzcrs-app, so they never touch the rest of wp-admin.
+ */
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .lzcrs-app { @apply lz-font-sans lz-text-ink lz-text-[14px] lz-leading-normal; margin-left: -20px; }
+  .lzcrs-app *, .lzcrs-app *::before, .lzcrs-app *::after { box-sizing: border-box; }
+
+  /* Top bar with logo and tabs */
+  .lzcrs-app .lzcrs-topbar { @apply lz-bg-white lz-border-0 lz-border-b lz-border-solid lz-border-ink-line lz-px-6 lz-flex lz-items-center lz-gap-6 lz-flex-wrap; min-height: 64px; }
+  .lzcrs-app .lzcrs-brand { @apply lz-flex lz-items-center lz-gap-3 lz-no-underline lz-text-ink; }
+  .lzcrs-app .lzcrs-brand img { @apply lz-w-8 lz-h-8 lz-block; }
+  .lzcrs-app .lzcrs-brand b { @apply lz-text-[17px] lz-font-semibold lz-tracking-tight; }
+  .lzcrs-app .lzcrs-brand small { @apply lz-block lz-text-[12px] lz-text-ink-muted lz-font-normal; }
+  .lzcrs-app .lzcrs-tabs { @apply lz-flex lz-gap-1 lz-flex-1 lz-flex-wrap; }
+  .lzcrs-app .lzcrs-tabs a { @apply lz-px-3 lz-py-2 lz-rounded-lg lz-no-underline lz-text-ink-muted lz-font-medium; }
+  .lzcrs-app .lzcrs-tabs a:hover { @apply lz-text-ink lz-bg-ink-soft; }
+  .lzcrs-app .lzcrs-tabs a[aria-current="page"] { @apply lz-bg-brand-50 lz-text-brand-700; }
+  .lzcrs-app .lzcrs-tabs a:focus { box-shadow: 0 0 0 2px #14637a; outline: none; }
+
+  /* Page body */
+  .lzcrs-app .lzcrs-page { @apply lz-px-6 lz-py-6 lz-max-w-[1200px]; }
+  .lzcrs-app .lzcrs-page-head { @apply lz-flex lz-items-end lz-justify-between lz-gap-4 lz-flex-wrap lz-mb-5; }
+  .lzcrs-app h1.lzcrs-h1 { @apply lz-text-[24px] lz-leading-tight lz-font-semibold lz-m-0 lz-p-0 lz-text-ink; }
+  .lzcrs-app .lzcrs-sub { @apply lz-text-ink-muted lz-mt-1 lz-mb-0; }
+  .lzcrs-app h2.lzcrs-h2 { @apply lz-text-[15px] lz-font-semibold lz-m-0 lz-p-0 lz-text-ink; }
+
+  /* Cards, stats, badges, buttons */
+  .lzcrs-app .lzcrs-card { @apply lz-bg-white lz-border lz-border-solid lz-border-ink-line lz-rounded-xl lz-shadow-card; }
+  .lzcrs-app .lzcrs-card-h { @apply lz-flex lz-items-center lz-justify-between lz-gap-3 lz-px-5 lz-py-4 lz-border-0 lz-border-b lz-border-solid lz-border-ink-line; }
+  .lzcrs-app .lzcrs-card-b { @apply lz-p-5; }
+  .lzcrs-app .lzcrs-stat { @apply lz-bg-white lz-border lz-border-solid lz-border-ink-line lz-rounded-xl lz-shadow-card lz-p-5; }
+  .lzcrs-app .lzcrs-stat dt { @apply lz-text-[13px] lz-text-ink-muted lz-font-medium; }
+  .lzcrs-app .lzcrs-stat dd { @apply lz-m-0 lz-mt-1 lz-text-[28px] lz-font-semibold lz-tracking-tight; font-variant-numeric: tabular-nums; }
+  .lzcrs-app .lzcrs-badge { @apply lz-inline-flex lz-items-center lz-px-2.5 lz-py-0.5 lz-rounded-full lz-text-[12px] lz-font-semibold; }
+  .lzcrs-app .lzcrs-badge.hot { @apply lz-bg-hot-bg lz-text-hot-fg; }
+  .lzcrs-app .lzcrs-badge.warm { @apply lz-bg-warm-bg lz-text-warm-fg; }
+  .lzcrs-app .lzcrs-badge.cold { @apply lz-bg-cold-bg lz-text-cold-fg; }
+  .lzcrs-app .lzcrs-badge.neutral { @apply lz-bg-ink-soft lz-text-ink-muted; }
+  .lzcrs-app .lzcrs-btn { @apply lz-inline-flex lz-items-center lz-gap-2 lz-px-4 lz-py-2 lz-rounded-lg lz-font-semibold lz-no-underline lz-cursor-pointer lz-border lz-border-solid lz-border-ink-line lz-bg-white lz-text-ink lz-text-[14px] lz-leading-5; }
+  .lzcrs-app .lzcrs-btn:hover { @apply lz-bg-ink-soft lz-text-ink; }
+  .lzcrs-app .lzcrs-btn.primary { @apply lz-bg-brand-700 lz-border-brand-700 lz-text-white; }
+  .lzcrs-app .lzcrs-btn.primary:hover { @apply lz-bg-brand-900 lz-text-white; }
+  .lzcrs-app .lzcrs-btn.danger { @apply lz-text-hot-fg; }
+  .lzcrs-app .lzcrs-btn:focus { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #14637a; outline: none; }
+  .lzcrs-app code.lzcrs-code { @apply lz-bg-ink-soft lz-border lz-border-solid lz-border-ink-line lz-rounded-md lz-px-2 lz-py-1 lz-text-[13px]; }
+
+  /* Key/value lists */
+  .lzcrs-app dl.lzcrs-kv { @apply lz-grid lz-gap-x-6 lz-gap-y-2 lz-m-0; grid-template-columns: max-content minmax(0, 1fr); }
+  .lzcrs-app dl.lzcrs-kv dt { @apply lz-text-ink-muted; }
+  .lzcrs-app dl.lzcrs-kv dd { @apply lz-m-0 lz-font-medium; }
+
+  /* Info box */
+  .lzcrs-app .lzcrs-info { @apply lz-flex lz-items-center lz-justify-between lz-gap-4 lz-flex-wrap lz-rounded-xl lz-px-5 lz-py-4 lz-mb-5 lz-bg-brand-50 lz-border lz-border-solid lz-border-brand-100 lz-text-brand-900; }
+  .lzcrs-app .lzcrs-info p { @apply lz-m-0; }
+
+  /* WordPress list table, restyled inside our card only */
+  .lzcrs-app .lzcrs-table-card .tablenav { @apply lz-px-5 lz-m-0 lz-py-3 lz-h-auto; }
+  .lzcrs-app .lzcrs-table-card table.wp-list-table { @apply lz-border-0 lz-shadow-none lz-rounded-none; }
+  .lzcrs-app .lzcrs-table-card table.wp-list-table thead th, .lzcrs-app .lzcrs-table-card table.wp-list-table thead td { @apply lz-bg-ink-soft lz-text-[12px] lz-font-semibold lz-text-ink-muted lz-border-0 lz-border-b lz-border-solid lz-border-ink-line; }
+  .lzcrs-app .lzcrs-table-card table.wp-list-table tbody td, .lzcrs-app .lzcrs-table-card table.wp-list-table tbody th { @apply lz-py-3 lz-border-0 lz-border-b lz-border-solid lz-border-ink-line lz-align-middle; }
+  .lzcrs-app .lzcrs-table-card table.wp-list-table tfoot { @apply lz-hidden; }
+  .lzcrs-app .lzcrs-table-card .striped > tbody > :nth-child(odd) { background: #fff; }
+  .lzcrs-app .lzcrs-table-card table.wp-list-table tbody tr:hover { @apply lz-bg-ink-soft; }
+  .lzcrs-app .subsubsub { @apply lz-float-none lz-m-0 lz-flex lz-gap-1 lz-flex-wrap; }
+  .lzcrs-app .subsubsub li { @apply lz-m-0; font-size: 0; }
+  .lzcrs-app .subsubsub li a { @apply lz-text-[13px] lz-px-3 lz-py-1.5 lz-rounded-full lz-border lz-border-solid lz-border-ink-line lz-bg-white lz-text-ink-muted lz-no-underline lz-inline-block; }
+  .lzcrs-app .subsubsub li a.current { @apply lz-bg-brand-700 lz-border-brand-700 lz-text-white; }
+  .lzcrs-app .subsubsub li a .count { @apply lz-text-inherit lz-opacity-80; }
+  .lzcrs-app .lzcrs-table-card table.wp-list-table { min-width: 860px; }
+  .lzcrs-app .lzcrs-table-card .column-email { width: 22%; }
+  .lzcrs-app .lzcrs-table-card td.column-email { word-break: normal; overflow-wrap: anywhere; }
+  .lzcrs-app .lzcrs-table-card .column-total { width: 70px; }
+  .lzcrs-app .lzcrs-table-card .column-band { width: 80px; }
+  .lzcrs-app .lzcrs-table-card a.row-title { @apply lz-text-ink; }
+  .lzcrs-app .lzcrs-table-card a.row-title:hover { @apply lz-text-brand-700; }
+  .lzcrs-app .search-box input[type=search] { @apply lz-rounded-lg lz-border lz-border-solid lz-border-ink-line lz-px-3 lz-min-h-[36px]; }
+  .lzcrs-app .button, .lzcrs-app .tablenav select { @apply lz-rounded-lg; }
+  .lzcrs-app p.search-box { @apply lz-float-none lz-m-0 lz-flex lz-gap-2; }
+
+  /* Settings form */
+  .lzcrs-app .lzcrs-field { @apply lz-grid lz-gap-1.5 lz-py-4 lz-border-0 lz-border-b lz-border-solid lz-border-ink-line; }
+  .lzcrs-app .lzcrs-field:last-child { @apply lz-border-b-0; }
+  .lzcrs-app .lzcrs-field > label, .lzcrs-app .lzcrs-field > .lzcrs-label { @apply lz-font-semibold; }
+  .lzcrs-app .lzcrs-help { @apply lz-text-[13px] lz-text-ink-muted lz-m-0; }
+  .lzcrs-app .lzcrs-field input[type=text], .lzcrs-app .lzcrs-field input[type=url], .lzcrs-app .lzcrs-field input[type=number], .lzcrs-app .lzcrs-field select {
+    @apply lz-rounded-lg lz-border lz-border-solid lz-border-ink-line lz-px-3 lz-py-1.5 lz-max-w-[420px] lz-w-full lz-shadow-none lz-min-h-[38px]; }
+  .lzcrs-app .lzcrs-field input[type=number] { @apply lz-max-w-[140px]; }
+  .lzcrs-app .lzcrs-field input[type=color] { @apply lz-w-14 lz-h-10 lz-p-1 lz-rounded-lg lz-border lz-border-solid lz-border-ink-line lz-cursor-pointer; }
+  .lzcrs-app .lzcrs-toggle { @apply lz-flex lz-items-start lz-gap-3 lz-cursor-pointer; }
+  .lzcrs-app .lzcrs-toggle input { @apply lz-mt-0.5; }
+  .lzcrs-app .notice, .lzcrs-app div.updated, .lzcrs-app div.error { @apply lz-mx-0 lz-mb-5 lz-rounded-lg; }
+}

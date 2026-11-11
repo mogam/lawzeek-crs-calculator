@@ -123,6 +123,20 @@ class Lzcrs_Db {
 		return (int) $wpdb->get_var( "SELECT COUNT(*) FROM $table $where" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- where is prepared.
 	}
 
+	/** Numbers for the dashboard: all leads, leads since a UTC time, hot leads, average score. */
+	public static function stats( $since_utc ) {
+		global $wpdb;
+		$table = self::table();
+		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name is fixed.
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT COUNT(*) AS total, SUM(created_at >= %s) AS recent, SUM(band = 'hot') AS hot, AVG(total) AS avg_score FROM $table", $since_utc ), ARRAY_A );
+		return array(
+			'total'  => (int) $row['total'],
+			'recent' => (int) $row['recent'],
+			'hot'    => (int) $row['hot'],
+			'avg'    => null === $row['avg_score'] ? null : (int) round( (float) $row['avg_score'] ),
+		);
+	}
+
 	public static function set_status( $id, $status ) {
 		global $wpdb;
 		if ( ! in_array( $status, self::STATUSES, true ) ) {
