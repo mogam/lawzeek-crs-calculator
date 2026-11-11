@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "lawzeek/crs-calculator",
+  "version": "1.0.0",
+  "title": "CRS Calculator",
+  "category": "widgets",
+  "icon": "calculator",
+  "description": "Canada Express Entry CRS score calculator that saves every result as a lead.",
+  "keywords": ["crs", "express entry", "immigration", "calculator", "canada"],
+  "textdomain": "lawzeek-crs-calculator",
+  "attributes": {
+    "title": { "type": "string", "default": "" }
+  },
+  "supports": { "html": false, "multiple": false },
+  "editorScript": "file:./index.js"
+}

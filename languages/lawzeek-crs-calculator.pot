@@ -1,0 +1,918 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Lawzeek CRS Calculator 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-11 16:49+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/class-lzcrs-admin.php:51 includes/class-lzcrs-admin.php:52
+#: includes/class-lzcrs-admin.php:59 includes/class-lzcrs-admin.php:188
+msgid "CRS Leads"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:59 includes/class-lzcrs-admin.php:214
+msgid "All leads"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:60 includes/class-lzcrs-admin.php:298
+msgid "CRS Calculator settings"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:60 includes/class-lzcrs-admin.php:64
+msgid "Settings"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:87
+msgid "You do not have permission to do this."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:103
+msgid ""
+"Want Express Entry draw alerts for your leads, online booking and a website "
+"chatbot? See Lawzeek for immigration consultants."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:104
+msgid "Learn more"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:104
+msgid "Dismiss"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:156
+msgid "Status saved."
+msgstr ""
+
+#. translators: %d: number of deleted leads
+#: includes/class-lzcrs-admin.php:158
+#, php-format
+msgid "%d lead deleted."
+msgid_plural "%d leads deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lzcrs-admin.php:159
+msgid "That did not work. Please try again."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:189
+msgid "Export CSV"
+msgstr ""
+
+#. translators: %s: the shortcode
+#: includes/class-lzcrs-admin.php:196
+#, php-format
+msgid ""
+"No leads yet. Add the CRS Calculator block, or the shortcode %s, to any "
+"page. Every visitor who sees their score will appear here."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:205
+msgid "Search leads"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:216
+msgid "Lead not found"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:232
+msgid "Profile and score"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:236 includes/class-lzcrs-frontend.php:176
+msgid "Age"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:237 includes/class-lzcrs-frontend.php:121
+#: includes/class-lzcrs-frontend.php:177
+msgid "Education"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:238
+msgid "Education in Canada"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:239
+msgid "IELTS L / R / W / S"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:240 includes/class-lzcrs-frontend.php:179
+msgid "French"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:241
+msgid "Canadian work (years)"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:242
+msgid "Work outside Canada (years)"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:243
+msgid "Provincial nomination"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:243 includes/class-lzcrs-admin.php:244
+msgid "Yes"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:243 includes/class-lzcrs-admin.php:244
+msgid "No"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:244
+msgid "Sibling in Canada"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:245 includes/class-lzcrs-list-table.php:48
+msgid "Likely pathway"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:246 includes/class-lzcrs-frontend.php:181
+msgid "Core human capital"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:247 includes/class-lzcrs-frontend.php:182
+msgid "Skill transferability"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:248 includes/class-lzcrs-frontend.php:183
+msgid "Additional points"
+msgstr ""
+
+#. translators: %s: rules version
+#: includes/class-lzcrs-admin.php:257
+#, php-format
+msgid "Scored with rules %s."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:262 includes/class-lzcrs-list-table.php:49
+msgid "Status"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:265
+msgid "Lead status"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:270
+msgid "Save status"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:273
+msgid "Fastest ways to raise the score"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:279
+msgid "Consent record"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:280
+msgid "Agreed to be contacted about their options"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:281
+msgid "Opted in to updates"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:281
+msgid "Did not opt in to updates: do not add to newsletters"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:283
+msgid "Submitted on"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:288
+msgid "Delete this lead permanently? This cannot be undone."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:288
+msgid "Delete lead"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:305
+msgid "Send new leads to"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:307
+msgid ""
+"One or more emails, separated by commas. Empty means the site admin email."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:309
+msgid "Recent Express Entry cutoff"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:311
+msgid ""
+"Shown to visitors (\"N above/below the recent cutoff\") and used to rate "
+"leads Hot, Warm or Cold. Update it after each draw."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:313
+msgid "Phone number field"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:314
+msgid "Ask, optional"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:314
+msgid "Ask, required"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:314
+msgid "Do not ask"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:319
+msgid "Button colour"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:322
+msgid "Button after the result"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:323
+msgid "Text"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:323
+msgid "Book a consultation"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:324
+msgid "Link"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:325
+msgid ""
+"Optional. Shown under the score, for example a link to your contact or "
+"booking page. Needs both text and link."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:327
+msgid "Privacy policy page"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:333
+msgid "Use the site privacy policy page"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:337
+msgid "Linked from the consent checkbox."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:339
+msgid "Credit link"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:339
+msgid "Show a small \"CRS calculator by Lawzeek\" link under the calculator"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:341
+msgid "When deleting the plugin"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:341
+msgid "Also delete all leads and settings"
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:342
+msgid "Off by default, so your leads are not lost by accident."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:346
+msgid "Add the calculator to a page"
+msgstr ""
+
+#. translators: 1: block name, 2: shortcode
+#: includes/class-lzcrs-admin.php:349
+#, php-format
+msgid ""
+"In the block editor, add the %1$s block. Or paste the shortcode %2$s into "
+"any page or post."
+msgstr ""
+
+#: includes/class-lzcrs-admin.php:350 blocks/crs-calculator/index.js:33
+msgid "CRS Calculator"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:53
+msgid "Check your CRS score"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:57
+msgid "CRS calculator by Lawzeek"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:63
+msgid "Please turn on JavaScript to use the CRS calculator."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:97 includes/class-lzcrs-frontend.php:105
+msgid "None or under 1 year"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:98 includes/class-lzcrs-frontend.php:106
+msgid "1 year"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:99 includes/class-lzcrs-frontend.php:107
+msgid "2 years"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:100
+msgid "3 years"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:101
+msgid "4 years"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:102
+msgid "5 years or more"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:108
+msgid "3 years or more"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:120
+msgid "About you"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:122
+msgid "Language tests"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:123
+msgid "Work experience"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:124
+msgid "A few extras"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:125
+msgid "Your result is ready"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:126
+msgid "Your CRS estimate"
+msgstr ""
+
+#. translators: %d: step number from 1 to 5
+#: includes/class-lzcrs-frontend.php:129
+#, php-format
+msgid "Step %d of 5"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:130
+msgid "Almost done"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:131
+msgid "Done"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:132
+msgid "Back"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:133
+msgid "Next"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:134
+msgid "Show my score"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:135
+msgid "Calculating…"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:136
+msgid "Start over"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:137
+msgid "Your age"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:138
+msgid "Points peak between 20 and 29."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:139
+msgid ""
+"This calculator scores single applicants. A consultant can review spouse "
+"factors with you."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:140
+msgid "Highest education"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:141
+msgid "Education completed in Canada"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:142
+msgid "IELTS General Training scores"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:143
+msgid "Listening"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:144
+msgid "Reading"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:145
+msgid "Writing"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:146
+msgid "Speaking"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:147 includes/class-lzcrs-labels.php:77
+msgid "Below 4"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:148
+msgid "French test"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:149
+msgid "Skilled work experience in Canada"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:150
+msgid "Skilled work experience outside Canada"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:151
+msgid "Last 10 years, full-time, TEER 0–3 jobs."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:152
+msgid "I have a provincial nomination"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:153
+msgid "A PNP certificate from a province or territory"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:154
+msgid "I have a brother or sister in Canada"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:155
+msgid "Citizen or permanent resident, 18 or older"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:156
+msgid ""
+"Enter your details to see your score, a full breakdown and the fastest ways "
+"to raise it."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:157
+msgid "Full name"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:158 includes/class-lzcrs-list-table.php:44
+msgid "Email"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:159
+msgid "Phone number"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:160
+msgid "(optional)"
+msgstr ""
+
+#. translators: %s: website name
+#: includes/class-lzcrs-frontend.php:162
+#, php-format
+msgid "%s may use my answers to assess my options and contact me about them."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:163
+msgid "Privacy policy"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:164
+msgid "Send me updates that could affect my chances."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:165
+msgid "Optional. You can stop them at any time."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:166
+msgid "Leave this field empty"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:167
+msgid "Estimated CRS score"
+msgstr ""
+
+#. translators: 1: points difference, 2: recent cutoff score
+#: includes/class-lzcrs-frontend.php:169
+#, php-format
+msgid "%1$d above the recent cutoff of %2$d"
+msgstr ""
+
+#. translators: 1: points difference, 2: recent cutoff score
+#: includes/class-lzcrs-frontend.php:171
+#, php-format
+msgid "%1$d below the recent cutoff of %2$d"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:172
+msgid "Fastest ways to raise your score"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:173
+msgid "reaches the cutoff"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:174
+msgid "Full breakdown"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:178
+msgid "English"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:180
+msgid "Canadian work experience"
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:184
+msgid "Total"
+msgstr ""
+
+#. translators: %s: website name
+#: includes/class-lzcrs-frontend.php:187
+#, php-format
+msgid ""
+"This is an estimate, not legal advice. Your official score is set by IRCC "
+"when you submit an Express Entry profile. Provided by %s."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:188
+msgid "Enter an age between 16 and 80."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:189 includes/class-lzcrs-rest.php:70
+msgid "Enter your name."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:190 includes/class-lzcrs-rest.php:73
+msgid "Enter a valid email address, like name@example.com."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:191 includes/class-lzcrs-rest.php:78
+msgid "Enter your phone number."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:192 includes/class-lzcrs-rest.php:83
+msgid "Tick the box to agree to be contacted, so we can show your result."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:193 includes/class-lzcrs-rest.php:115
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/class-lzcrs-frontend.php:194
+msgid "Could not reach the website. Check your connection and try again."
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:18
+msgid "Less than high school"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:19
+msgid "High school"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:20
+msgid "One-year diploma or certificate"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:21
+msgid "Two-year diploma"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:22
+msgid "Bachelor's or 3+ year program"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:23
+msgid "Two or more credentials (one 3+ years)"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:24
+msgid "Master's or professional degree"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:25
+msgid "PhD"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:31
+msgid "None"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:32
+msgid "1–2 year Canadian credential"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:33
+msgid "3+ year Canadian credential"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:39
+msgid "No French test"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:40
+msgid "NCLC 5–6"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:41
+msgid "NCLC 7–8"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:42
+msgid "NCLC 9 or higher"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:48
+msgid "Hot"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:49
+msgid "Warm"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:50
+msgid "Cold"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:57
+msgid "New"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:58
+msgid "Contacted"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:59
+msgid "Booked"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:60
+msgid "Retained"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:61
+msgid "Lost"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:67
+msgid "Express Entry with PNP"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:68
+msgid "Canadian Experience Class"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:69
+msgid "Federal Skilled Worker"
+msgstr ""
+
+#: includes/class-lzcrs-labels.php:70
+msgid "PNP or study pathway"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:43
+msgid "Name"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:45
+msgid "Phone"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:46
+msgid "CRS"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:47
+msgid "Lead"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:50
+msgid "Received"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:62
+#: includes/class-lzcrs-list-table.php:112
+msgid "Delete"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:69
+msgid "All"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:111
+msgid "View"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:112
+msgid "Delete this lead permanently?"
+msgstr ""
+
+#: includes/class-lzcrs-list-table.php:139
+msgid "No leads match this filter."
+msgstr ""
+
+#: includes/class-lzcrs-privacy.php:24 includes/class-lzcrs-privacy.php:32
+#: includes/class-lzcrs-privacy.php:47
+msgid "CRS Calculator leads"
+msgstr ""
+
+#: includes/class-lzcrs-privacy.php:65
+msgid ""
+"When you use the CRS calculator on this website, we collect your answers "
+"(age, education, language test scores, work experience and similar), your "
+"name, email address, and optionally your phone number. We use them to "
+"calculate your estimated CRS score and to contact you about your immigration "
+"options. If you opt in, we may also send you updates. We store a one-way "
+"coded version of your IP address to block spam; we do not store the IP "
+"address itself. Your data is stored on this website only and is not sent to "
+"Lawzeek or anyone else by the calculator. You can ask us to export or delete "
+"your data at any time."
+msgstr ""
+
+#: includes/class-lzcrs-privacy.php:66
+msgid "Lawzeek CRS Calculator"
+msgstr ""
+
+#: includes/class-lzcrs-rest.php:80
+msgid "Use digits, spaces and + only in the phone number."
+msgstr ""
+
+#: includes/class-lzcrs-rest.php:119
+msgid "Some answers are not valid. Please check them and try again."
+msgstr ""
+
+#: includes/class-lzcrs-rest.php:124
+msgid "Too many attempts. Please try again in a few minutes."
+msgstr ""
+
+#: includes/class-lzcrs-rest.php:164
+msgid "We could not save your details. Please try again."
+msgstr ""
+
+#. translators: 1: site name, 2: visitor name, 3: CRS score, 4: lead band (Hot, Warm or Cold)
+#: includes/class-lzcrs-rest.php:176
+#, php-format
+msgid "[%1$s] New CRS lead: %2$s (%3$d, %4$s)"
+msgstr ""
+
+#. translators: %s: visitor name
+#: includes/class-lzcrs-rest.php:184
+#, php-format
+msgid "Name: %s"
+msgstr ""
+
+#. translators: %s: visitor email
+#: includes/class-lzcrs-rest.php:186
+#, php-format
+msgid "Email: %s"
+msgstr ""
+
+#. translators: %s: visitor phone
+#: includes/class-lzcrs-rest.php:188
+#, php-format
+msgid "Phone: %s"
+msgstr ""
+
+#. translators: %d: CRS score
+#: includes/class-lzcrs-rest.php:190
+#, php-format
+msgid "Estimated CRS score: %d"
+msgstr ""
+
+#. translators: %s: likely immigration pathway
+#: includes/class-lzcrs-rest.php:192
+#, php-format
+msgid "Likely pathway: %s"
+msgstr ""
+
+#. translators: %s: link to the lead in the WordPress admin
+#: includes/class-lzcrs-rest.php:195
+#, php-format
+msgid "Open the lead: %s"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:188
+msgid "Score CLB 9 in every IELTS skill"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:189
+msgid "Listening 8, Reading 7, Writing 7, Speaking 7"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:202
+msgid "Score CLB 10 in every IELTS skill"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:203
+msgid "Listening 8.5, Reading 8, Writing 7.5, Speaking 7.5"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:216
+msgid "Pass a French test at NCLC 7"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:217
+msgid "TEF Canada or TCF Canada, all four skills"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:227
+msgid "Add one more year of Canadian work"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:228
+msgid "Skilled work (TEER 0–3) in Canada"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:238
+msgid "Complete a master's degree"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:239
+msgid "Needs an ECA for credentials earned abroad"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:266
+msgid "Get a provincial nomination (PNP)"
+msgstr ""
+
+#: includes/class-lzcrs-scoring.php:267
+msgid "Adds 600 points; usually leads to an invitation"
+msgstr ""
+
+#: includes/class-lzcrs-settings.php:89
+msgid ""
+"Some notification emails are not valid. Use addresses like name@example.com, "
+"separated by commas."
+msgstr ""
+
+#: includes/class-lzcrs-settings.php:96
+msgid "The cutoff must be a whole number between 200 and 1200."
+msgstr ""
+
+#: includes/class-lzcrs-settings.php:112
+msgid "The button link must start with http:// or https://."
+msgstr ""
+
+#: blocks/crs-calculator/index.js:20
+msgid "Calculator"
+msgstr ""
+
+#: blocks/crs-calculator/index.js:22
+msgid "Heading"
+msgstr ""
+
+#: blocks/crs-calculator/index.js:23
+msgid "Leave empty to use “Check your CRS score”."
+msgstr ""
+
+#: blocks/crs-calculator/index.js:34
+msgid ""
+"Visitors will see the CRS calculator here. Leads appear under CRS Leads in "
+"your dashboard."
+msgstr ""
