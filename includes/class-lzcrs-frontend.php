@@ -50,18 +50,19 @@ class Lzcrs_Frontend {
 		$atts = shortcode_atts( array( 'title' => '' ), is_array( $atts ) ? $atts : array(), 'lawzeek_crs' );
 		$s    = Lzcrs_Settings::get();
 		self::enqueue();
-		$title  = '' !== trim( $atts['title'] ) ? sanitize_text_field( $atts['title'] ) : __( 'Check your CRS score', 'lawzeek-crs-calculator' );
+		$title  = '' !== trim( $atts['title'] ) ? sanitize_text_field( $atts['title'] ) : __( 'CRS score check', 'lawzeek-crs-calculator' );
 		$accent = sanitize_hex_color( $s['accent'] ) ? $s['accent'] : '#c8102e';
 		$style  = sprintf( '--lzcrs-accent:%s;--lzcrs-accent-ink:%s', $accent, self::ink_for( $accent ) );
 		$credit = $s['credit']
 			? '<p class="lzcrs-credit"><a href="https://wordpress.org/plugins/lawzeek-crs-calculator/" rel="noopener">' . esc_html__( 'CRS calculator by Lawzeek', 'lawzeek-crs-calculator' ) . '</a></p>'
 			: '';
 		return sprintf(
-			'<div class="lzcrs" data-lzcrs data-title="%1$s" style="%2$s"><noscript><p>%3$s</p></noscript></div>%4$s',
+			'<div class="lzcrs" data-lzcrs data-lzcrs-colors="%5$s" data-title="%1$s" style="%2$s"><noscript><p>%3$s</p></noscript></div>%4$s',
 			esc_attr( $title ),
 			esc_attr( $style ),
 			esc_html__( 'Please turn on JavaScript to use the CRS calculator.', 'lawzeek-crs-calculator' ),
-			$credit
+			$credit,
+			'custom' === $s['colors'] ? 'custom' : 'theme'
 		);
 	}
 
@@ -132,7 +133,7 @@ class Lzcrs_Frontend {
 			'back'       => __( 'Back', 'lawzeek-crs-calculator' ),
 			'next'       => __( 'Next', 'lawzeek-crs-calculator' ),
 			'showScore'  => __( 'Show my score', 'lawzeek-crs-calculator' ),
-			'saving'     => __( 'Calculating…', 'lawzeek-crs-calculator' ),
+			'saving'     => __( 'Calculating your score…', 'lawzeek-crs-calculator' ),
 			'restart'    => __( 'Start over', 'lawzeek-crs-calculator' ),
 			'age'        => __( 'Your age', 'lawzeek-crs-calculator' ),
 			'ageHint'    => __( 'Points peak between 20 and 29.', 'lawzeek-crs-calculator' ),
@@ -184,6 +185,10 @@ class Lzcrs_Frontend {
 				'total'                => __( 'Total', 'lawzeek-crs-calculator' ),
 			),
 			/* translators: %s: website name */
+			'nextStep'    => __( 'Next step', 'lawzeek-crs-calculator' ),
+			'bookTitle'   => __( 'Talk to a licensed consultant', 'lawzeek-crs-calculator' ),
+			'bookText'    => __( 'Get a personal review of your profile and the right next step for you.', 'lawzeek-crs-calculator' ),
+			'openBooking' => __( 'Open the booking page in a new tab', 'lawzeek-crs-calculator' ),
 			'disclaimer' => __( 'This is an estimate, not legal advice. Your official score is set by IRCC when you submit an Express Entry profile. Provided by %s.', 'lawzeek-crs-calculator' ),
 			'errAge'     => __( 'Enter an age between 16 and 80.', 'lawzeek-crs-calculator' ),
 			'errName'    => __( 'Enter your name.', 'lawzeek-crs-calculator' ),

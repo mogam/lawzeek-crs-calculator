@@ -31,6 +31,100 @@
 		} ).join( '' ) + '</select>';
 	}
 
+	var ARROW = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+	var BACK = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+	/* ---- Match the site's theme: read the theme's own button and heading styles. ---- */
+	function rgb( str ) {
+		var m = /rgba?\(\s*([\d.]+)[ ,]+([\d.]+)[ ,]+([\d.]+)(?:[ ,/]+([\d.]+%?))?/.exec( str || '' );
+		if ( ! m ) {
+			return null;
+		}
+		var a = m[ 4 ] === undefined ? 1 : ( m[ 4 ].indexOf( '%' ) > 0 ? parseFloat( m[ 4 ] ) / 100 : parseFloat( m[ 4 ] ) );
+		return { r: +m[ 1 ], g: +m[ 2 ], b: +m[ 3 ], a: a };
+	}
+	function lum( c ) {
+		var f = function ( v ) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow( ( v + 0.055 ) / 1.055, 2.4 ); };
+		return 0.2126 * f( c.r ) + 0.7152 * f( c.g ) + 0.0722 * f( c.b );
+	}
+	function contrast( a, b ) {
+		var x = lum( a ), y = lum( b );
+		return ( Math.max( x, y ) + 0.05 ) / ( Math.min( x, y ) + 0.05 );
+	}
+	function isBrowserDefault( c ) {
+		// Unstyled buttons are light grey in every browser; a theme that styles buttons picks its own colour.
+		return ! c || c.a < 0.5 || ( Math.abs( c.r - c.g ) < 6 && Math.abs( c.g - c.b ) < 10 && c.r > 225 );
+	}
+	/** The colour actually behind the calculator: the first ancestor with a solid background, else white. */
+	function pageBackground( el ) {
+		for ( var n = el.parentNode; n && n.nodeType === 1; n = n.parentNode ) {
+			var c = rgb( getComputedStyle( n ).backgroundColor );
+			if ( c && c.a > 0.5 ) {
+				return c;
+			}
+		}
+		return { r: 255, g: 255, b: 255, a: 1 };
+	}
+	function hexToRgb( v ) {
+		var m = /^\s*#([0-9a-f]{6})\s*$/i.exec( v || '' );
+		return m ? 'rgb(' + parseInt( m[ 1 ].slice( 0, 2 ), 16 ) + ',' + parseInt( m[ 1 ].slice( 2, 4 ), 16 ) + ',' + parseInt( m[ 1 ].slice( 4 ), 16 ) + ')' : v;
+	}
+
+	function matchTheme( root ) {
+		if ( root.getAttribute( 'data-lzcrs-colors' ) !== 'theme' || ! window.getComputedStyle ) {
+			return;
+		}
+		var host = root.parentNode;
+		var probe = document.createElement( 'div' );
+		probe.setAttribute( 'aria-hidden', 'true' );
+		probe.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;height:0;overflow:hidden';
+		probe.innerHTML = '<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">x</a></div><button type="button">x</button><h2>x</h2><a href="#">x</a>';
+		host.insertBefore( probe, root );
+		try {
+			var link = probe.querySelector( '.wp-element-button' );
+			var btn = probe.querySelector( 'button' );
+			var h2 = probe.querySelector( 'h2' );
+			var a = probe.querySelector( 'h2 + a' );
+			var pick = [ link, btn ].map( function ( el ) {
+				var cs = getComputedStyle( el );
+				return { el: el, bg: rgb( cs.backgroundColor ), fg: rgb( cs.color ), radius: cs.borderRadius };
+			} ).filter( function ( p ) { return ! isBrowserDefault( p.bg ); } )[ 0 ];
+			var vars = {};
+			if ( pick ) {
+				vars[ '--lzcrs-accent' ] = 'rgb(' + pick.bg.r + ',' + pick.bg.g + ',' + pick.bg.b + ')';
+				var ink = pick.fg && pick.fg.a > 0.5 && contrast( pick.fg, pick.bg ) >= 3 ? pick.fg : ( lum( pick.bg ) > 0.4 ? { r: 19, g: 34, b: 42 } : { r: 255, g: 255, b: 255 } );
+				vars[ '--lzcrs-accent-ink' ] = 'rgb(' + ink.r + ',' + ink.g + ',' + ink.b + ')';
+				if ( pick.radius && pick.radius !== '0px' ) {
+					vars[ '--lzcrs-btn-radius' ] = pick.radius;
+				}
+			} else {
+				// No styled buttons: use the theme's link colour if it is a real colour (not grey or black).
+				var lc = rgb( getComputedStyle( a ).color );
+				if ( lc && Math.max( lc.r, lc.g, lc.b ) - Math.min( lc.r, lc.g, lc.b ) > 40 ) {
+					vars[ '--lzcrs-accent' ] = 'rgb(' + lc.r + ',' + lc.g + ',' + lc.b + ')';
+					vars[ '--lzcrs-accent-ink' ] = lum( lc ) > 0.4 ? '#13222a' : '#ffffff';
+				}
+			}
+			// The accent must stand out from the page. On a dark page with a dark theme button (or the reverse),
+			// fall back to the text colour, with the page colour as the button text.
+			var bg = pageBackground( root ), text = rgb( getComputedStyle( root ).color );
+			var acc = rgb( vars[ '--lzcrs-accent' ] || hexToRgb( getComputedStyle( root ).getPropertyValue( '--lzcrs-accent' ) ) );
+			if ( text && acc && contrast( acc, bg ) < 2 ) {
+				vars[ '--lzcrs-accent' ] = 'rgb(' + text.r + ',' + text.g + ',' + text.b + ')';
+				vars[ '--lzcrs-accent-ink' ] = 'rgb(' + bg.r + ',' + bg.g + ',' + bg.b + ')';
+				root.setAttribute( 'data-lzcrs-contrast', 'text' );
+			}
+			var hs = getComputedStyle( h2 );
+			vars[ '--lzcrs-heading-font' ] = hs.fontFamily;
+			vars[ '--lzcrs-heading-weight' ] = hs.fontWeight;
+			Object.keys( vars ).forEach( function ( k ) { root.style.setProperty( k, vars[ k ] ); } );
+			root.setAttribute( 'data-lzcrs-theme', pick ? 'button' : 'fallback' );
+		} catch ( e ) {
+			// Keep the default look.
+		}
+		host.removeChild( probe );
+	}
+
 	var BANDS = [ [ 3, t.below4 ] ];
 	for ( var b = 4; b <= 9; b += 0.5 ) {
 		BANDS.push( [ b, b.toFixed( 1 ) ] );
@@ -89,11 +183,11 @@
 			var list = [ 'age', 'education', 'firstLanguage', 'secondLanguage', 'canadianWork' ];
 			return '<div class="lzcrs-score"><div class="lzcrs-big" data-lzcrs-total>' + esc( r.total ) + '<small>' + esc( t.estimate ) + '</small></div>' +
 				'<span class="lzcrs-pill ' + ( diff >= 0 ? 'good' : 'warn' ) + '">' + esc( fmt( diff >= 0 ? t.above : t.below, Math.abs( diff ), r.cutoff ) ) + '</span></div>' +
-				( r.cta ? '<a class="lzcrs-btn primary lzcrs-cta" href="' + esc( r.cta.url ) + '">' + esc( r.cta.text ) + '</a>' : '' ) +
 				'<p class="lzcrs-section">' + esc( t.fastest ) + '</p><ul class="lzcrs-gaps">' + r.gaps.map( function ( g ) {
 					return '<li><b>' + esc( g.label ) + '</b><span class="lzcrs-delta">+' + esc( g.delta ) + '</span><span class="lzcrs-d">' + esc( g.detail ) +
 						( g.reachesCutoff ? ' · <span class="lzcrs-reach">' + esc( t.reaches ) + '</span>' : '' ) + '</span></li>';
 				} ).join( '' ) + '</ul>' +
+				booking( r.cta ) +
 				'<details><summary>' + esc( t.breakdown ) + '</summary><table><tbody>' +
 				list.map( function ( k ) { return '<tr><td>' + esc( rows[ k ] ) + '</td><td>' + esc( br[ k ] ) + '</td></tr>'; } ).join( '' ) +
 				'<tr class="sub"><td>' + esc( rows.core ) + '</td><td>' + esc( br.core ) + '</td></tr>' +
@@ -103,25 +197,45 @@
 				'<p class="lzcrs-disclaimer">' + esc( fmt( t.disclaimer, D.site ) ) + '</p>';
 		}
 
+		/* The last step of the form: the consultant's booking link (button, or Calendly calendar inline). */
+		function booking( cta ) {
+			if ( ! cta || ! /^https?:\/\//.test( cta.url ) ) {
+				return '';
+			}
+			var inline = cta.mode === 'inline' && /^https:\/\/(www\.)?calendly\.com\//.test( cta.embed || '' );
+			return '<section class="lzcrs-book" aria-label="' + esc( t.nextStep ) + '"><span class="lzcrs-chip">' + esc( t.nextStep ) + '</span>' +
+				'<h3>' + esc( t.bookTitle ) + '</h3><p>' + esc( t.bookText ) + '</p>' +
+				( inline
+					? '<iframe src="' + esc( cta.embed ) + '" title="' + esc( cta.text ) + '" loading="lazy"></iframe><a class="lzcrs-alt" href="' + esc( cta.url ) + '" target="_blank" rel="noopener">' + esc( t.openBooking ) + '</a>'
+					: '<a class="lzcrs-btn primary lzcrs-cta" href="' + esc( cta.url ) + '" target="_blank" rel="noopener">' + esc( cta.text ) + ARROW + '</a>' ) +
+				'</section>';
+		}
+
 		function render( focusHeading ) {
 			var s = state.step;
-			var pct = s >= 5 ? 100 : ( s / 5 ) * 100;
+			var done = s >= 5 ? 5 : s;
 			var kicker = s < 5 ? fmt( t.stepOf, s + 1 ) : ( s === 5 ? t.almost : t.done );
 			var dis = state.busy ? ' disabled' : '';
 			var foot;
 			if ( s < 5 ) {
-				foot = '<button type="button" class="lzcrs-btn" data-act="back"' + ( s === 0 ? ' hidden' : '' ) + '>' + esc( t.back ) + '</button>' +
-					'<button type="button" class="lzcrs-btn primary" data-act="next">' + esc( t.next ) + '</button>';
+				foot = '<button type="button" class="lzcrs-btn" data-act="back"' + ( s === 0 ? ' hidden' : '' ) + '>' + BACK + esc( t.back ) + '</button>' +
+					'<button type="button" class="lzcrs-btn primary" data-act="next">' + esc( t.next ) + ARROW + '</button>';
 			} else if ( s === 5 ) {
-				foot = '<button type="button" class="lzcrs-btn" data-act="back">' + esc( t.back ) + '</button>' +
-					'<button type="button" class="lzcrs-btn primary" data-act="submit"' + dis + '>' + esc( state.busy ? t.saving : t.showScore ) + '</button>';
+				foot = '<button type="button" class="lzcrs-btn" data-act="back"' + dis + '>' + BACK + esc( t.back ) + '</button>' +
+					( state.busy
+						? '<span class="lzcrs-status" role="status"><span class="lzcrs-pulse" aria-hidden="true"></span>' + esc( t.saving ) + '</span>'
+						: '<button type="button" class="lzcrs-btn primary" data-act="submit">' + esc( t.showScore ) + ARROW + '</button>' );
 			} else {
 				foot = '<button type="button" class="lzcrs-btn" data-act="restart">' + esc( t.restart ) + '</button>';
 			}
+			var bars = '';
+			for ( var i = 0; i < 5; i++ ) {
+				bars += '<span' + ( i < done || s >= 5 ? ' class="on"' : ( i === done ? ' class="on"' : '' ) ) + '></span>';
+			}
 			root.innerHTML = '<div class="lzcrs-card" role="form" aria-label="' + esc( heading ) + '">' +
-				'<div class="lzcrs-head"><div class="lzcrs-kicker"><span>' + esc( heading ) + '</span><span>' + esc( kicker ) + '</span></div>' +
+				'<div class="lzcrs-head"><div class="lzcrs-kicker"><span class="lzcrs-chip">' + esc( heading ) + '</span><span class="lzcrs-count">' + esc( kicker ) + '</span></div>' +
 				'<h2 class="lzcrs-title" tabindex="-1">' + esc( t.titles[ s ] ) + '</h2>' +
-				'<div class="lzcrs-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.round( pct ) + '"><span style="width:' + pct + '%"></span></div></div>' +
+				'<div class="lzcrs-steps" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="' + Math.min( s + 1, 5 ) + '" aria-label="' + esc( kicker ) + '">' + bars + '</div></div>' +
 				'<div class="lzcrs-body">' + body() + '<div class="lzcrs-alert" role="alert">' + ( state.err ? '<p class="lzcrs-err">' + esc( state.err ) + '</p>' : '' ) + '</div></div>' +
 				'<div class="lzcrs-foot">' + foot + '</div></div>';
 			if ( focusHeading ) {
@@ -212,6 +326,7 @@
 		for ( var i = 0; i < nodes.length; i++ ) {
 			if ( ! nodes[ i ].getAttribute( 'data-lzcrs-ready' ) ) {
 				nodes[ i ].setAttribute( 'data-lzcrs-ready', '1' );
+				matchTheme( nodes[ i ] );
 				mount( nodes[ i ], i );
 			}
 		}

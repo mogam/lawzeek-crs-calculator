@@ -99,7 +99,7 @@ class Lzcrs_Rest {
 		$s      = Lzcrs_Settings::get();
 		$cutoff = (int) $s['cutoff'];
 		$b      = Lzcrs_Scoring::calculate( $a );
-		$cta    = ( '' !== $s['cta_text'] && '' !== $s['cta_url'] ) ? array( 'text' => $s['cta_text'], 'url' => $s['cta_url'] ) : null;
+		$cta    = Lzcrs_Settings::booking();
 		return array(
 			'total'     => $b['total'],
 			'cutoff'    => $cutoff,

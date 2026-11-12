@@ -40,10 +40,10 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
   * search, filters and status tracking;
   * CSV export.
 * **Email alert** for every new lead.
-* **Your brand:**
-  * your button colour;
+* **Booking as the last step:** add your Calendly, Cal.com, Acuity or any appointment link. Visitors see a "Book a consultation" button right after their score. With Calendly, you can show the calendar inside the result instead.
+* **Matches your theme:** the calculator picks up your theme's fonts, button colour and corner style automatically, and works on light and dark themes. Prefer your own colour? Choose "Custom colour".
+* **Your setup:**
   * your recent cutoff;
-  * an optional "Book a consultation" button after the result;
   * the phone field can be optional, required or hidden.
 * **Privacy built in:**
   * a consent checkbox linked to your privacy policy;
@@ -99,6 +99,14 @@ No. Answers and contact details are saved in your WordPress database only. The o
 
 Not yet. This version scores single applicants, and tells visitors that a consultant can review spouse factors with them.
 
+= How do I add my Calendly or booking link? =
+
+Go to Lawzeek → Settings → Booking and paste your link. Choose "Button" (works with any link) or "Calendar in the result" (Calendly links only).
+
+= The calculator does not match my theme. =
+
+It reads your theme's button style when the page loads. If your theme does not style buttons, the calculator uses your link colour or the custom colour from Settings. You can also choose "Custom colour" under Lawzeek → Settings → Look.
+
 = Can I change the heading? =
 
 Yes. In the block, use the Heading setting in the sidebar. With the shortcode, use `[lawzeek_crs title="Check your Canada PR chances"]`.
@@ -117,12 +125,12 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 
 == Screenshots ==
 
-1. The calculator on a website: five short steps.
-2. The result: estimated score, distance to the cutoff and the fastest ways to raise it.
-3. The Lawzeek dashboard: leads this month, hot leads, average score and a getting-started checklist.
+1. The calculator on a website, matching the theme's fonts and colours.
+2. The result: estimated score, distance to the cutoff, the fastest ways to raise it and the booking step.
+3. The Lawzeek dashboard: your shortcode first, then leads this month, hot leads, average score and setup steps.
 4. Leads list with Hot, Warm and Cold ratings, search, filters and CSV export.
 5. A lead's profile, score breakdown, status and consent record.
-6. Settings.
+6. Settings: leads, scoring, booking, look, privacy.
 
 == Changelog ==
 
@@ -149,4 +157,6 @@ This plugin stores the data visitors enter in the calculator in your WordPress d
 
 It also stores a one-way hash of the visitor's IP address, used for rate limiting only.
 
-The plugin does not send this data to Lawzeek or to any third party, and makes no external HTTP requests. Site owners can export or erase a visitor's data from Tools → Export / Erase Personal Data.
+The plugin does not send this data to Lawzeek or to any third party, and makes no external HTTP requests.
+
+If you choose to show your Calendly calendar inside the result, Calendly's booking page loads in the visitor's browser when they reach their result. Calendly's own privacy policy applies to that page. With the default "Button" option, nothing loads until the visitor clicks. Site owners can export or erase a visitor's data from Tools → Export / Erase Personal Data.
