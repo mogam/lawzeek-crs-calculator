@@ -1,0 +1,24 @@
+# Not shipped in the plugin zip or to WordPress.org (used by bin/build-zip.sh and the WordPress.org deploy).
+/.git
+/.github
+/.wordpress-org
+/.distignore
+/.gitignore
+/.wp-env.json
+/bin
+/dist
+/node_modules
+/vendor
+/tests
+/test-results
+/playwright-report
+/composer.json
+/composer.lock
+/package.json
+/package-lock.json
+/phpcs.xml.dist
+/playwright.config.ts
+/README.md
+/SECURITY.md
+/CONTRIBUTING.md
+.DS_Store

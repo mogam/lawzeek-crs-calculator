@@ -1,0 +1,27 @@
+{
+  "name": "lawzeek-crs-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development tools for the Lawzeek CRS Calculator WordPress plugin. Not shipped in the plugin.",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build:css": "tailwindcss -c assets/src/tailwind.config.js -i assets/src/admin.css -o assets/css/admin.css",
+    "env:start": "wp-env start",
+    "env:stop": "wp-env stop",
+    "test:parity": "php tests/parity/crs-parity-test.php",
+    "test:setup": "wp-env run cli wp eval-file wp-content/plugins/lawzeek-crs-calculator/tests/bin/setup.php",
+    "test:wp": "npm run test:setup && wp-env run cli wp eval-file wp-content/plugins/lawzeek-crs-calculator/tests/wp/plugin-test.php",
+    "test:e2e": "playwright test",
+    "lint:php": "composer lint",
+    "zip": "bash bin/build-zip.sh",
+    "i18n:pot": "bash bin/make-pot.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.48.2",
+    "@wordpress/env": "11.17.0",
+    "tailwindcss": "3.4.17"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

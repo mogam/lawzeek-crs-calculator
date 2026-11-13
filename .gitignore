@@ -1,0 +1,9 @@
+node_modules/
+vendor/
+dist/
+tests/.tmp/
+test-results/
+playwright-report/
+.wp-env.override.json
+.DS_Store
+*.log

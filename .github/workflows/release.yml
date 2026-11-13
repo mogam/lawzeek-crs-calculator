@@ -1,0 +1,57 @@
+# Release: push a tag like v1.0.1.
+# 1. All CI checks run again on the tagged commit.
+# 2. A GitHub Release is created with the zip and its SHA-256.
+# 3. WordPress.org deploy runs only when the repository variable WPORG_DEPLOY is "true", and waits in the
+#    "wordpress-org" environment until an approved reviewer clicks Approve.
+name: Release
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
+
+  github-release:
+    name: GitHub Release
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - name: Build zip (tag must match the plugin version)
+        env:
+          TAG: ${{ github.ref_name }}
+        run: EXPECTED_VERSION="${TAG#v}" bash bin/build-zip.sh
+      - uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
+        with:
+          files: |
+            dist/*.zip
+            dist/*.zip.sha256
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+
+  wordpress-org:
+    name: Deploy to WordPress.org
+    needs: github-release
+    if: vars.WPORG_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: wordpress-org
+      url: https://wordpress.org/plugins/lawzeek-crs-calculator/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2 # 2.3.0
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: lawzeek-crs-calculator
+          ASSETS_DIR: .wordpress-org
