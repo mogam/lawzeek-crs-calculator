@@ -184,11 +184,11 @@ class Lzcrs_Frontend {
 				'additional'           => __( 'Additional points', 'lawzeek-crs-calculator' ),
 				'total'                => __( 'Total', 'lawzeek-crs-calculator' ),
 			),
-			/* translators: %s: website name */
 			'nextStep'    => __( 'Next step', 'lawzeek-crs-calculator' ),
 			'bookTitle'   => __( 'Talk to a licensed consultant', 'lawzeek-crs-calculator' ),
 			'bookText'    => __( 'Get a personal review of your profile and the right next step for you.', 'lawzeek-crs-calculator' ),
 			'openBooking' => __( 'Open the booking page in a new tab', 'lawzeek-crs-calculator' ),
+			/* translators: %s: website name */
 			'disclaimer' => __( 'This is an estimate, not legal advice. Your official score is set by IRCC when you submit an Express Entry profile. Provided by %s.', 'lawzeek-crs-calculator' ),
 			'errAge'     => __( 'Enter an age between 16 and 80.', 'lawzeek-crs-calculator' ),
 			'errName'    => __( 'Enter your name.', 'lawzeek-crs-calculator' ),

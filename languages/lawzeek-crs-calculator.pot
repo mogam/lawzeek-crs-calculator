@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lawzeek CRS Calculator 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 16:49+0530\n"
+"POT-Creation-Date: 2026-11-13 10:57+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,751 +17,1276 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: includes/class-lzcrs-admin.php:51 includes/class-lzcrs-admin.php:52
-#: includes/class-lzcrs-admin.php:59 includes/class-lzcrs-admin.php:188
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:49
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:50
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:107
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:108
+#: includes/class-lzcrs-admin.php:49 includes/class-lzcrs-admin.php:50
+#: includes/class-lzcrs-admin.php:107 includes/class-lzcrs-admin.php:108
+msgid "Lawzeek"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:57
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:262
+#: includes/class-lzcrs-admin.php:57 includes/class-lzcrs-admin.php:262
+msgid "Lawzeek dashboard"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:57
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:102
+#: includes/class-lzcrs-admin.php:57 includes/class-lzcrs-admin.php:102
+msgid "Dashboard"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:58
+#: includes/class-lzcrs-admin.php:58
 msgid "CRS Leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:59 includes/class-lzcrs-admin.php:214
-msgid "All leads"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:58
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:103
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:369
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:511
+#: includes/class-lzcrs-admin.php:58 includes/class-lzcrs-admin.php:103
+#: includes/class-lzcrs-admin.php:369 includes/class-lzcrs-admin.php:511
+msgid "Leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:60 includes/class-lzcrs-admin.php:298
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:59
+#: includes/class-lzcrs-admin.php:59
 msgid "CRS Calculator settings"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:60 includes/class-lzcrs-admin.php:64
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:59
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:66
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:104
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:505
+#: includes/class-lzcrs-admin.php:59 includes/class-lzcrs-admin.php:66
+#: includes/class-lzcrs-admin.php:104 includes/class-lzcrs-admin.php:505
 msgid "Settings"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:87
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:80
+#: includes/class-lzcrs-admin.php:80
+msgid "Copied"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:88
+#: includes/class-lzcrs-admin.php:88
 msgid "You do not have permission to do this."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:103
-msgid ""
-"Want Express Entry draw alerts for your leads, online booking and a website "
-"chatbot? See Lawzeek for immigration consultants."
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:107
+#: includes/class-lzcrs-admin.php:107 blocks/crs-calculator/index.js:33
+msgid "CRS Calculator"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:104
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:115
+#: includes/class-lzcrs-admin.php:115
+msgid "Live on your site"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:117
+#: includes/class-lzcrs-admin.php:117
+msgid "Not on a page yet"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:149
+#: includes/class-lzcrs-admin.php:149
+msgid "Do more with your leads."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:149
+#: includes/class-lzcrs-admin.php:149
+msgid ""
+"Lawzeek for immigration consultants adds Express Entry draw alerts, online "
+"booking and a website chatbot."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:151
+#: includes/class-lzcrs-admin.php:151
 msgid "Learn more"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:104
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:153
+#: includes/class-lzcrs-admin.php:153
 msgid "Dismiss"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:156
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:160
+#: includes/class-lzcrs-admin.php:160
 msgid "Status saved."
 msgstr ""
 
 #. translators: %d: number of deleted leads
-#: includes/class-lzcrs-admin.php:158
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:162
+#: includes/class-lzcrs-admin.php:162
 #, php-format
 msgid "%d lead deleted."
 msgid_plural "%d leads deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-lzcrs-admin.php:159
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:163
+#: includes/class-lzcrs-admin.php:163
 msgid "That did not work. Please try again."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:189
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:266
+#: includes/class-lzcrs-admin.php:266
+msgid "Your shortcode"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:267
+#: includes/class-lzcrs-admin.php:267
+msgid "Put your calculator <em>anywhere</em> on your site."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:268
+#: includes/class-lzcrs-admin.php:268
+msgid ""
+"Paste the shortcode into any page or post, or add the CRS Calculator block. "
+"It picks up your theme's fonts and colours automatically."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:270
+#: includes/class-lzcrs-admin.php:270
+msgid "Copy"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:271
+#: includes/class-lzcrs-admin.php:271
+msgid "With your own heading:"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:274
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:322
+#: includes/class-lzcrs-admin.php:274 includes/class-lzcrs-admin.php:322
+msgid "View page"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:282
+#: includes/class-lzcrs-admin.php:282
+msgid "Leads this month"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:283
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:400
+#: includes/class-lzcrs-admin.php:283 includes/class-lzcrs-admin.php:400
+msgid "All leads"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:284
+#: includes/class-lzcrs-admin.php:284
+msgid "Hot leads"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:285
+#: includes/class-lzcrs-admin.php:285
+msgid "Average score"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:293
+#: includes/class-lzcrs-admin.php:293
+msgid "Call these first"
+msgstr ""
+
+#. translators: 1: number of hot leads, 2: number of all leads
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:296
+#: includes/class-lzcrs-admin.php:296
+#, php-format
+msgid ""
+"%1$d of your %2$d leads is hot: close to the cutoff or already nominated by "
+"a province."
+msgid_plural ""
+"%1$d of your %2$d leads are hot: close to the cutoff or already nominated by "
+"a province."
+msgstr[0] ""
+msgstr[1] ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:300
+#: includes/class-lzcrs-admin.php:300
+msgid "See hot leads"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:306
+#: includes/class-lzcrs-admin.php:306
+msgid "Recent leads"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:306
+#: includes/class-lzcrs-admin.php:306
+msgid "View all"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:308
+#: includes/class-lzcrs-admin.php:308
+msgid "No leads yet. When visitors use your calculator, they will appear here."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:322
+#: includes/class-lzcrs-admin.php:322
+msgid "Add the calculator to a page"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:322
+#: includes/class-lzcrs-admin.php:322
+msgid "Copy the shortcode above into any page."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:323
+#: includes/class-lzcrs-admin.php:323
+msgid "Add your booking link"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:323
+#: includes/class-lzcrs-admin.php:323
+msgid "Calendly or any appointment page"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:324
+#: includes/class-lzcrs-admin.php:324
+msgid "Set the recent Express Entry cutoff"
+msgstr ""
+
+#. translators: %d: cutoff score
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:324
+#: includes/class-lzcrs-admin.php:324
+#, php-format
+msgid "Now %d. Update after each draw."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:325
+#: includes/class-lzcrs-admin.php:325
+msgid "Get your first lead"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:325
+#: includes/class-lzcrs-admin.php:325
+msgid "Try the calculator yourself to see how it works."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:327
+#: includes/class-lzcrs-admin.php:327
+msgid "Setup"
+msgstr ""
+
+#. translators: 1: steps done, 2: total steps
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:330
+#: includes/class-lzcrs-admin.php:330
+#, php-format
+msgid "%1$d of %2$d done"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:336
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:132
+#: includes/class-lzcrs-admin.php:336 includes/class-lzcrs-frontend.php:132
+msgid "Done"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:370
+#: includes/class-lzcrs-admin.php:370
+msgid "Everyone who saw their score with your calculator."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:371
+#: includes/class-lzcrs-admin.php:371
 msgid "Export CSV"
 msgstr ""
 
-#. translators: %s: the shortcode
-#: includes/class-lzcrs-admin.php:196
-#, php-format
-msgid ""
-"No leads yet. Add the CRS Calculator block, or the shortcode %s, to any "
-"page. Every visitor who sees their score will appear here."
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:375
+#: includes/class-lzcrs-admin.php:375
+msgid "No leads yet"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:205
+#. translators: %s: the shortcode
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:378
+#: includes/class-lzcrs-admin.php:378
+#, php-format
+msgid ""
+"Add the CRS Calculator block, or the shortcode %s, to any page. Every "
+"visitor who sees their score will appear here."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:389
+#: includes/class-lzcrs-admin.php:389
 msgid "Search leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:216
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:402
+#: includes/class-lzcrs-admin.php:402
 msgid "Lead not found"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:232
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:416
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:168
+#: includes/class-lzcrs-admin.php:416 includes/class-lzcrs-frontend.php:168
+msgid "Estimated CRS score"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:419
+#: includes/class-lzcrs-admin.php:419
 msgid "Profile and score"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:236 includes/class-lzcrs-frontend.php:176
-msgid "Age"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:237 includes/class-lzcrs-frontend.php:121
-#: includes/class-lzcrs-frontend.php:177
-msgid "Education"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:238
-msgid "Education in Canada"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:239
-msgid "IELTS L / R / W / S"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:240 includes/class-lzcrs-frontend.php:179
-msgid "French"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:241
-msgid "Canadian work (years)"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:242
-msgid "Work outside Canada (years)"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:243
-msgid "Provincial nomination"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:243 includes/class-lzcrs-admin.php:244
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:421
+#: includes/class-lzcrs-admin.php:421
 msgid "Yes"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:243 includes/class-lzcrs-admin.php:244
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:422
+#: includes/class-lzcrs-admin.php:422
 msgid "No"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:244
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:424
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:177
+#: includes/class-lzcrs-admin.php:424 includes/class-lzcrs-frontend.php:177
+msgid "Age"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:425
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:122
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:178
+#: includes/class-lzcrs-admin.php:425 includes/class-lzcrs-frontend.php:122
+#: includes/class-lzcrs-frontend.php:178
+msgid "Education"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:426
+#: includes/class-lzcrs-admin.php:426
+msgid "Education in Canada"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:427
+#: includes/class-lzcrs-admin.php:427
+msgid "IELTS L / R / W / S"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:428
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:180
+#: includes/class-lzcrs-admin.php:428 includes/class-lzcrs-frontend.php:180
+msgid "French"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:429
+#: includes/class-lzcrs-admin.php:429
+msgid "Canadian work (years)"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:430
+#: includes/class-lzcrs-admin.php:430
+msgid "Work outside Canada (years)"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:431
+#: includes/class-lzcrs-admin.php:431
+msgid "Provincial nomination"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:432
+#: includes/class-lzcrs-admin.php:432
 msgid "Sibling in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:245 includes/class-lzcrs-list-table.php:48
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:433
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:48
+#: includes/class-lzcrs-admin.php:433 includes/class-lzcrs-list-table.php:48
 msgid "Likely pathway"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:246 includes/class-lzcrs-frontend.php:181
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:442
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:182
+#: includes/class-lzcrs-admin.php:442 includes/class-lzcrs-frontend.php:182
 msgid "Core human capital"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:247 includes/class-lzcrs-frontend.php:182
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:442
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:183
+#: includes/class-lzcrs-admin.php:442 includes/class-lzcrs-frontend.php:183
 msgid "Skill transferability"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:248 includes/class-lzcrs-frontend.php:183
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:442
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:184
+#: includes/class-lzcrs-admin.php:442 includes/class-lzcrs-frontend.php:184
 msgid "Additional points"
 msgstr ""
 
-#. translators: %s: rules version
-#: includes/class-lzcrs-admin.php:257
-#, php-format
-msgid "Scored with rules %s."
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:262 includes/class-lzcrs-list-table.php:49
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:449
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:49
+#: includes/class-lzcrs-admin.php:449 includes/class-lzcrs-list-table.php:49
 msgid "Status"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:265
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:452
+#: includes/class-lzcrs-admin.php:452
 msgid "Lead status"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:270
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:456
+#: includes/class-lzcrs-admin.php:456
 msgid "Save status"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:273
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:458
+#: includes/class-lzcrs-admin.php:458
 msgid "Fastest ways to raise the score"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:279
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:464
+#: includes/class-lzcrs-admin.php:464
 msgid "Consent record"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:280
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:465
+#: includes/class-lzcrs-admin.php:465
 msgid "Agreed to be contacted about their options"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:281
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:466
+#: includes/class-lzcrs-admin.php:466
 msgid "Opted in to updates"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:281
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:466
+#: includes/class-lzcrs-admin.php:466
 msgid "Did not opt in to updates: do not add to newsletters"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:283
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:468
+#: includes/class-lzcrs-admin.php:468
 msgid "Submitted on"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:288
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:473
+#: includes/class-lzcrs-admin.php:473
 msgid "Delete this lead permanently? This cannot be undone."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:288
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:473
+#: includes/class-lzcrs-admin.php:473
 msgid "Delete lead"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:305
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:505
+#: includes/class-lzcrs-admin.php:505
+msgid "How the calculator looks, scores, books calls and sends you leads."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:511
+#: includes/class-lzcrs-admin.php:511
+msgid "Where new-lead emails go."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:512
+#: includes/class-lzcrs-admin.php:512
 msgid "Send new leads to"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:307
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:512
+#: includes/class-lzcrs-admin.php:512
 msgid ""
 "One or more emails, separated by commas. Empty means the site admin email."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:309
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:515
+#: includes/class-lzcrs-admin.php:515
+msgid "Scoring"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:515
+#: includes/class-lzcrs-admin.php:515
+msgid "Compared with each visitor's score."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:516
+#: includes/class-lzcrs-admin.php:516
 msgid "Recent Express Entry cutoff"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:311
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:516
+#: includes/class-lzcrs-admin.php:516
 msgid ""
 "Shown to visitors (\"N above/below the recent cutoff\") and used to rate "
 "leads Hot, Warm or Cold. Update it after each draw."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:313
-msgid "Phone number field"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:519
+#: includes/class-lzcrs-admin.php:519
+msgid "Booking"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:314
-msgid "Ask, optional"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:519
+#: includes/class-lzcrs-admin.php:519
+msgid ""
+"The last step of the form: visitors book a call with you right after seeing "
+"their score."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:314
-msgid "Ask, required"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:520
+#: includes/class-lzcrs-admin.php:520
+msgid "Booking link"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:314
-msgid "Do not ask"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:520
+#: includes/class-lzcrs-admin.php:520
+msgid ""
+"Calendly, Cal.com, Acuity, Google Calendar appointment pages or your own "
+"contact page. Leave empty to hide the booking step."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:319
-msgid "Button colour"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:521
+#: includes/class-lzcrs-admin.php:521
+msgid "Button text"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:322
-msgid "Button after the result"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:323
-msgid "Text"
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:323
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:521
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-settings.php:80
+#: includes/class-lzcrs-admin.php:521 includes/class-lzcrs-settings.php:80
 msgid "Book a consultation"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:324
-msgid "Link"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:523
+#: includes/class-lzcrs-admin.php:523
+msgid "How to show it"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:325
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:525
+#: includes/class-lzcrs-admin.php:525
+msgid "Button"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:525
+#: includes/class-lzcrs-admin.php:525
+msgid "Opens your booking page in a new tab. Works with any link."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:526
+#: includes/class-lzcrs-admin.php:526
+msgid "Calendar in the result"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:526
+#: includes/class-lzcrs-admin.php:526
 msgid ""
-"Optional. Shown under the score, for example a link to your contact or "
-"booking page. Needs both text and link."
+"Shows your Calendly calendar right under the score. Calendly links only."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:327
-msgid "Privacy policy page"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:528
+#: includes/class-lzcrs-admin.php:528
+msgid ""
+"With the calendar option, Calendly's page loads in the visitor's browser "
+"when they reach their result."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:333
-msgid "Use the site privacy policy page"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:532
+#: includes/class-lzcrs-admin.php:532
+msgid "Look"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:337
-msgid "Linked from the consent checkbox."
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:532
+#: includes/class-lzcrs-admin.php:532
+msgid "The calculator follows your theme by default."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:339
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:534
+#: includes/class-lzcrs-admin.php:534
+msgid "Ask, optional"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:534
+#: includes/class-lzcrs-admin.php:534
+msgid "Ask, required"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:534
+#: includes/class-lzcrs-admin.php:534
+msgid "Do not ask"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:539
+#: includes/class-lzcrs-admin.php:539
+msgid "Colours"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:541
+#: includes/class-lzcrs-admin.php:541
+msgid "Match my theme"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:541
+#: includes/class-lzcrs-admin.php:541
+msgid ""
+"Uses your theme's button colour, fonts and corners. Works on light and dark "
+"themes."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:542
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:545
+#: includes/class-lzcrs-admin.php:542 includes/class-lzcrs-admin.php:545
+msgid "Custom colour"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:542
+#: includes/class-lzcrs-admin.php:542
+msgid "Use the colour below for buttons and highlights."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:545
+#: includes/class-lzcrs-admin.php:545
+msgid ""
+"Used when \"Custom colour\" is selected, or when the theme has no button "
+"colour. Text on it turns white or dark automatically."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:546
+#: includes/class-lzcrs-admin.php:546
+msgid "Phone number field"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:547
+#: includes/class-lzcrs-admin.php:547
 msgid "Credit link"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:339
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:547
+#: includes/class-lzcrs-admin.php:547
 msgid "Show a small \"CRS calculator by Lawzeek\" link under the calculator"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:341
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:555
+#: includes/class-lzcrs-admin.php:555
+msgid "Use the site privacy policy page"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:560
+#: includes/class-lzcrs-admin.php:560
+msgid "Privacy and data"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:560
+#: includes/class-lzcrs-admin.php:560
+msgid "Consent, and what happens to leads if you remove the plugin."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:561
+#: includes/class-lzcrs-admin.php:561
+msgid "Privacy policy page"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:561
+#: includes/class-lzcrs-admin.php:561
+msgid "No pages yet."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:561
+#: includes/class-lzcrs-admin.php:561
+msgid "Linked from the consent checkbox."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:562
+#: includes/class-lzcrs-admin.php:562
 msgid "When deleting the plugin"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:341
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:562
+#: includes/class-lzcrs-admin.php:562
 msgid "Also delete all leads and settings"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:342
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:562
+#: includes/class-lzcrs-admin.php:562
 msgid "Off by default, so your leads are not lost by accident."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:346
-msgid "Add the calculator to a page"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-admin.php:565
+#: includes/class-lzcrs-admin.php:565
+msgid "Save settings"
 msgstr ""
 
-#. translators: 1: block name, 2: shortcode
-#: includes/class-lzcrs-admin.php:349
-#, php-format
-msgid ""
-"In the block editor, add the %1$s block. Or paste the shortcode %2$s into "
-"any page or post."
-msgstr ""
-
-#: includes/class-lzcrs-admin.php:350 blocks/crs-calculator/index.js:33
-msgid "CRS Calculator"
-msgstr ""
-
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:53
 #: includes/class-lzcrs-frontend.php:53
-msgid "Check your CRS score"
+msgid "CRS score check"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:57
 #: includes/class-lzcrs-frontend.php:57
 msgid "CRS calculator by Lawzeek"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:63
 #: includes/class-lzcrs-frontend.php:63
 msgid "Please turn on JavaScript to use the CRS calculator."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:97 includes/class-lzcrs-frontend.php:105
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:98
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:106
+#: includes/class-lzcrs-frontend.php:98 includes/class-lzcrs-frontend.php:106
 msgid "None or under 1 year"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:98 includes/class-lzcrs-frontend.php:106
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:99
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:107
+#: includes/class-lzcrs-frontend.php:99 includes/class-lzcrs-frontend.php:107
 msgid "1 year"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:99 includes/class-lzcrs-frontend.php:107
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:100
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:108
+#: includes/class-lzcrs-frontend.php:100 includes/class-lzcrs-frontend.php:108
 msgid "2 years"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:100
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:101
+#: includes/class-lzcrs-frontend.php:101
 msgid "3 years"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:101
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:102
+#: includes/class-lzcrs-frontend.php:102
 msgid "4 years"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:102
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:103
+#: includes/class-lzcrs-frontend.php:103
 msgid "5 years or more"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:108
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:109
+#: includes/class-lzcrs-frontend.php:109
 msgid "3 years or more"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:120
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:121
+#: includes/class-lzcrs-frontend.php:121
 msgid "About you"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:122
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:123
+#: includes/class-lzcrs-frontend.php:123
 msgid "Language tests"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:123
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:124
+#: includes/class-lzcrs-frontend.php:124
 msgid "Work experience"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:124
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:125
+#: includes/class-lzcrs-frontend.php:125
 msgid "A few extras"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:125
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:126
+#: includes/class-lzcrs-frontend.php:126
 msgid "Your result is ready"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:126
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:127
+#: includes/class-lzcrs-frontend.php:127
 msgid "Your CRS estimate"
 msgstr ""
 
 #. translators: %d: step number from 1 to 5
-#: includes/class-lzcrs-frontend.php:129
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:130
+#: includes/class-lzcrs-frontend.php:130
 #, php-format
 msgid "Step %d of 5"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:130
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:131
+#: includes/class-lzcrs-frontend.php:131
 msgid "Almost done"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:131
-msgid "Done"
-msgstr ""
-
-#: includes/class-lzcrs-frontend.php:132
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:133
+#: includes/class-lzcrs-frontend.php:133
 msgid "Back"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:133
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:134
+#: includes/class-lzcrs-frontend.php:134
 msgid "Next"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:134
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:135
+#: includes/class-lzcrs-frontend.php:135
 msgid "Show my score"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:135
-msgid "Calculating…"
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:136
+#: includes/class-lzcrs-frontend.php:136
+msgid "Calculating your score…"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:136
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:137
+#: includes/class-lzcrs-frontend.php:137
 msgid "Start over"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:137
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:138
+#: includes/class-lzcrs-frontend.php:138
 msgid "Your age"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:138
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:139
+#: includes/class-lzcrs-frontend.php:139
 msgid "Points peak between 20 and 29."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:139
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:140
+#: includes/class-lzcrs-frontend.php:140
 msgid ""
 "This calculator scores single applicants. A consultant can review spouse "
 "factors with you."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:140
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:141
+#: includes/class-lzcrs-frontend.php:141
 msgid "Highest education"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:141
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:142
+#: includes/class-lzcrs-frontend.php:142
 msgid "Education completed in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:142
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:143
+#: includes/class-lzcrs-frontend.php:143
 msgid "IELTS General Training scores"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:143
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:144
+#: includes/class-lzcrs-frontend.php:144
 msgid "Listening"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:144
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:145
+#: includes/class-lzcrs-frontend.php:145
 msgid "Reading"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:145
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:146
+#: includes/class-lzcrs-frontend.php:146
 msgid "Writing"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:146
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:147
+#: includes/class-lzcrs-frontend.php:147
 msgid "Speaking"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:147 includes/class-lzcrs-labels.php:77
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:148
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:77
+#: includes/class-lzcrs-frontend.php:148 includes/class-lzcrs-labels.php:77
 msgid "Below 4"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:148
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:149
+#: includes/class-lzcrs-frontend.php:149
 msgid "French test"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:149
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:150
+#: includes/class-lzcrs-frontend.php:150
 msgid "Skilled work experience in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:150
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:151
+#: includes/class-lzcrs-frontend.php:151
 msgid "Skilled work experience outside Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:151
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:152
+#: includes/class-lzcrs-frontend.php:152
 msgid "Last 10 years, full-time, TEER 0–3 jobs."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:152
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:153
+#: includes/class-lzcrs-frontend.php:153
 msgid "I have a provincial nomination"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:153
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:154
+#: includes/class-lzcrs-frontend.php:154
 msgid "A PNP certificate from a province or territory"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:154
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:155
+#: includes/class-lzcrs-frontend.php:155
 msgid "I have a brother or sister in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:155
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:156
+#: includes/class-lzcrs-frontend.php:156
 msgid "Citizen or permanent resident, 18 or older"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:156
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:157
+#: includes/class-lzcrs-frontend.php:157
 msgid ""
 "Enter your details to see your score, a full breakdown and the fastest ways "
 "to raise it."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:157
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:158
+#: includes/class-lzcrs-frontend.php:158
 msgid "Full name"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:158 includes/class-lzcrs-list-table.php:44
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:159
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:44
+#: includes/class-lzcrs-frontend.php:159 includes/class-lzcrs-list-table.php:44
 msgid "Email"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:159
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:160
+#: includes/class-lzcrs-frontend.php:160
 msgid "Phone number"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:160
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:161
+#: includes/class-lzcrs-frontend.php:161
 msgid "(optional)"
 msgstr ""
 
 #. translators: %s: website name
-#: includes/class-lzcrs-frontend.php:162
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:163
+#: includes/class-lzcrs-frontend.php:163
 #, php-format
 msgid "%s may use my answers to assess my options and contact me about them."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:163
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:164
+#: includes/class-lzcrs-frontend.php:164
 msgid "Privacy policy"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:164
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:165
+#: includes/class-lzcrs-frontend.php:165
 msgid "Send me updates that could affect my chances."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:165
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:166
+#: includes/class-lzcrs-frontend.php:166
 msgid "Optional. You can stop them at any time."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:166
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:167
+#: includes/class-lzcrs-frontend.php:167
 msgid "Leave this field empty"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:167
-msgid "Estimated CRS score"
-msgstr ""
-
 #. translators: 1: points difference, 2: recent cutoff score
-#: includes/class-lzcrs-frontend.php:169
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:170
+#: includes/class-lzcrs-frontend.php:170
 #, php-format
 msgid "%1$d above the recent cutoff of %2$d"
 msgstr ""
 
 #. translators: 1: points difference, 2: recent cutoff score
-#: includes/class-lzcrs-frontend.php:171
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:172
+#: includes/class-lzcrs-frontend.php:172
 #, php-format
 msgid "%1$d below the recent cutoff of %2$d"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:172
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:173
+#: includes/class-lzcrs-frontend.php:173
 msgid "Fastest ways to raise your score"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:173
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:174
+#: includes/class-lzcrs-frontend.php:174
 msgid "reaches the cutoff"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:174
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:175
+#: includes/class-lzcrs-frontend.php:175
 msgid "Full breakdown"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:178
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:179
+#: includes/class-lzcrs-frontend.php:179
 msgid "English"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:180
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:181
+#: includes/class-lzcrs-frontend.php:181
 msgid "Canadian work experience"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:184
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:185
+#: includes/class-lzcrs-frontend.php:185
 msgid "Total"
 msgstr ""
 
-#. translators: %s: website name
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:187
 #: includes/class-lzcrs-frontend.php:187
+msgid "Next step"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:188
+#: includes/class-lzcrs-frontend.php:188
+msgid "Talk to a licensed consultant"
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:189
+#: includes/class-lzcrs-frontend.php:189
+msgid "Get a personal review of your profile and the right next step for you."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:190
+#: includes/class-lzcrs-frontend.php:190
+msgid "Open the booking page in a new tab"
+msgstr ""
+
+#. translators: %s: website name
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:192
+#: includes/class-lzcrs-frontend.php:192
 #, php-format
 msgid ""
 "This is an estimate, not legal advice. Your official score is set by IRCC "
 "when you submit an Express Entry profile. Provided by %s."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:188
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:193
+#: includes/class-lzcrs-frontend.php:193
 msgid "Enter an age between 16 and 80."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:189 includes/class-lzcrs-rest.php:70
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:194
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:70
+#: includes/class-lzcrs-frontend.php:194 includes/class-lzcrs-rest.php:70
 msgid "Enter your name."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:190 includes/class-lzcrs-rest.php:73
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:195
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:73
+#: includes/class-lzcrs-frontend.php:195 includes/class-lzcrs-rest.php:73
 msgid "Enter a valid email address, like name@example.com."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:191 includes/class-lzcrs-rest.php:78
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:196
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:78
+#: includes/class-lzcrs-frontend.php:196 includes/class-lzcrs-rest.php:78
 msgid "Enter your phone number."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:192 includes/class-lzcrs-rest.php:83
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:197
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:83
+#: includes/class-lzcrs-frontend.php:197 includes/class-lzcrs-rest.php:83
 msgid "Tick the box to agree to be contacted, so we can show your result."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:193 includes/class-lzcrs-rest.php:115
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:198
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:115
+#: includes/class-lzcrs-frontend.php:198 includes/class-lzcrs-rest.php:115
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:194
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-frontend.php:199
+#: includes/class-lzcrs-frontend.php:199
 msgid "Could not reach the website. Check your connection and try again."
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:18
 #: includes/class-lzcrs-labels.php:18
 msgid "Less than high school"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:19
 #: includes/class-lzcrs-labels.php:19
 msgid "High school"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:20
 #: includes/class-lzcrs-labels.php:20
 msgid "One-year diploma or certificate"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:21
 #: includes/class-lzcrs-labels.php:21
 msgid "Two-year diploma"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:22
 #: includes/class-lzcrs-labels.php:22
 msgid "Bachelor's or 3+ year program"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:23
 #: includes/class-lzcrs-labels.php:23
 msgid "Two or more credentials (one 3+ years)"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:24
 #: includes/class-lzcrs-labels.php:24
 msgid "Master's or professional degree"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:25
 #: includes/class-lzcrs-labels.php:25
 msgid "PhD"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:31
 #: includes/class-lzcrs-labels.php:31
 msgid "None"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:32
 #: includes/class-lzcrs-labels.php:32
 msgid "1–2 year Canadian credential"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:33
 #: includes/class-lzcrs-labels.php:33
 msgid "3+ year Canadian credential"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:39
 #: includes/class-lzcrs-labels.php:39
 msgid "No French test"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:40
 #: includes/class-lzcrs-labels.php:40
 msgid "NCLC 5–6"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:41
 #: includes/class-lzcrs-labels.php:41
 msgid "NCLC 7–8"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:42
 #: includes/class-lzcrs-labels.php:42
 msgid "NCLC 9 or higher"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:48
 #: includes/class-lzcrs-labels.php:48
 msgid "Hot"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:49
 #: includes/class-lzcrs-labels.php:49
 msgid "Warm"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:50
 #: includes/class-lzcrs-labels.php:50
 msgid "Cold"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:57
 #: includes/class-lzcrs-labels.php:57
 msgid "New"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:58
 #: includes/class-lzcrs-labels.php:58
 msgid "Contacted"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:59
 #: includes/class-lzcrs-labels.php:59
 msgid "Booked"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:60
 #: includes/class-lzcrs-labels.php:60
 msgid "Retained"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:61
 #: includes/class-lzcrs-labels.php:61
 msgid "Lost"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:67
 #: includes/class-lzcrs-labels.php:67
 msgid "Express Entry with PNP"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:68
 #: includes/class-lzcrs-labels.php:68
 msgid "Canadian Experience Class"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:69
 #: includes/class-lzcrs-labels.php:69
 msgid "Federal Skilled Worker"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-labels.php:70
 #: includes/class-lzcrs-labels.php:70
 msgid "PNP or study pathway"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:43
 #: includes/class-lzcrs-list-table.php:43
 msgid "Name"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:45
 #: includes/class-lzcrs-list-table.php:45
 msgid "Phone"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:46
 #: includes/class-lzcrs-list-table.php:46
 msgid "CRS"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:47
 #: includes/class-lzcrs-list-table.php:47
 msgid "Lead"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:50
 #: includes/class-lzcrs-list-table.php:50
 msgid "Received"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:62
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:112
 #: includes/class-lzcrs-list-table.php:62
 #: includes/class-lzcrs-list-table.php:112
 msgid "Delete"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:69
 #: includes/class-lzcrs-list-table.php:69
 msgid "All"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:111
 #: includes/class-lzcrs-list-table.php:111
 msgid "View"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:112
 #: includes/class-lzcrs-list-table.php:112
 msgid "Delete this lead permanently?"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-list-table.php:139
 #: includes/class-lzcrs-list-table.php:139
 msgid "No leads match this filter."
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-privacy.php:24
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-privacy.php:32
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-privacy.php:47
 #: includes/class-lzcrs-privacy.php:24 includes/class-lzcrs-privacy.php:32
 #: includes/class-lzcrs-privacy.php:47
 msgid "CRS Calculator leads"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-privacy.php:65
 #: includes/class-lzcrs-privacy.php:65
 msgid ""
 "When you use the CRS calculator on this website, we collect your answers "
@@ -775,128 +1300,162 @@ msgid ""
 "your data at any time."
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-privacy.php:66
 #: includes/class-lzcrs-privacy.php:66
 msgid "Lawzeek CRS Calculator"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:80
 #: includes/class-lzcrs-rest.php:80
 msgid "Use digits, spaces and + only in the phone number."
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:119
 #: includes/class-lzcrs-rest.php:119
 msgid "Some answers are not valid. Please check them and try again."
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:124
 #: includes/class-lzcrs-rest.php:124
 msgid "Too many attempts. Please try again in a few minutes."
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:164
 #: includes/class-lzcrs-rest.php:164
 msgid "We could not save your details. Please try again."
 msgstr ""
 
 #. translators: 1: site name, 2: visitor name, 3: CRS score, 4: lead band (Hot, Warm or Cold)
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:176
 #: includes/class-lzcrs-rest.php:176
 #, php-format
 msgid "[%1$s] New CRS lead: %2$s (%3$d, %4$s)"
 msgstr ""
 
 #. translators: %s: visitor name
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:184
 #: includes/class-lzcrs-rest.php:184
 #, php-format
 msgid "Name: %s"
 msgstr ""
 
 #. translators: %s: visitor email
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:186
 #: includes/class-lzcrs-rest.php:186
 #, php-format
 msgid "Email: %s"
 msgstr ""
 
 #. translators: %s: visitor phone
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:188
 #: includes/class-lzcrs-rest.php:188
 #, php-format
 msgid "Phone: %s"
 msgstr ""
 
 #. translators: %d: CRS score
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:190
 #: includes/class-lzcrs-rest.php:190
 #, php-format
 msgid "Estimated CRS score: %d"
 msgstr ""
 
 #. translators: %s: likely immigration pathway
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:192
 #: includes/class-lzcrs-rest.php:192
 #, php-format
 msgid "Likely pathway: %s"
 msgstr ""
 
 #. translators: %s: link to the lead in the WordPress admin
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-rest.php:195
 #: includes/class-lzcrs-rest.php:195
 #, php-format
 msgid "Open the lead: %s"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:188
 #: includes/class-lzcrs-scoring.php:188
 msgid "Score CLB 9 in every IELTS skill"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:189
 #: includes/class-lzcrs-scoring.php:189
 msgid "Listening 8, Reading 7, Writing 7, Speaking 7"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:202
 #: includes/class-lzcrs-scoring.php:202
 msgid "Score CLB 10 in every IELTS skill"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:203
 #: includes/class-lzcrs-scoring.php:203
 msgid "Listening 8.5, Reading 8, Writing 7.5, Speaking 7.5"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:216
 #: includes/class-lzcrs-scoring.php:216
 msgid "Pass a French test at NCLC 7"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:217
 #: includes/class-lzcrs-scoring.php:217
 msgid "TEF Canada or TCF Canada, all four skills"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:227
 #: includes/class-lzcrs-scoring.php:227
 msgid "Add one more year of Canadian work"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:228
 #: includes/class-lzcrs-scoring.php:228
 msgid "Skilled work (TEER 0–3) in Canada"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:238
 #: includes/class-lzcrs-scoring.php:238
 msgid "Complete a master's degree"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:239
 #: includes/class-lzcrs-scoring.php:239
 msgid "Needs an ECA for credentials earned abroad"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:266
 #: includes/class-lzcrs-scoring.php:266
 msgid "Get a provincial nomination (PNP)"
 msgstr ""
 
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-scoring.php:267
 #: includes/class-lzcrs-scoring.php:267
 msgid "Adds 600 points; usually leads to an invitation"
 msgstr ""
 
-#: includes/class-lzcrs-settings.php:89
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-settings.php:118
+#: includes/class-lzcrs-settings.php:118
 msgid ""
 "Some notification emails are not valid. Use addresses like name@example.com, "
 "separated by commas."
 msgstr ""
 
-#: includes/class-lzcrs-settings.php:96
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-settings.php:125
+#: includes/class-lzcrs-settings.php:125
 msgid "The cutoff must be a whole number between 200 and 1200."
 msgstr ""
 
-#: includes/class-lzcrs-settings.php:112
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-settings.php:143
+#: includes/class-lzcrs-settings.php:143
 msgid "The button link must start with http:// or https://."
+msgstr ""
+
+#: dist/lawzeek-crs-calculator/includes/class-lzcrs-settings.php:150
+#: includes/class-lzcrs-settings.php:150
+msgid ""
+"The calendar can be shown inside the result only for Calendly links. Other "
+"booking links are shown as a button."
 msgstr ""
 
 #: blocks/crs-calculator/index.js:20

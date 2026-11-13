@@ -153,7 +153,8 @@ class Lzcrs_Db {
 		}
 		$table = self::table();
 		$in    = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
-		return (int) $wpdb->query( $wpdb->prepare( "DELETE FROM $table WHERE id IN ($in)", $ids ) ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- fixed table name; $in is only "%d" placeholders, one per id.
+		return (int) $wpdb->query( $wpdb->prepare( "DELETE FROM $table WHERE id IN ($in)", $ids ) );
 	}
 
 	public static function by_email( $email ) {

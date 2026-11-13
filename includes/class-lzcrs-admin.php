@@ -82,11 +82,11 @@ class Lzcrs_Admin {
 		);
 	}
 
-	private static function check( $nonce_action ) {
+	/** Stops the request unless the user may manage the plugin. Each handler then verifies its own nonce. */
+	private static function require_cap() {
 		if ( ! current_user_can( self::CAP ) ) {
 			wp_die( esc_html__( 'You do not have permission to do this.', 'lawzeek-crs-calculator' ), 403 );
 		}
-		check_admin_referer( $nonce_action );
 	}
 
 	private static function back( $args ) {
@@ -170,22 +170,25 @@ class Lzcrs_Admin {
 	/* ------------------------------------------------------------------ Actions */
 
 	public static function handle_dismiss() {
-		self::check( 'lzcrs_dismiss' );
+		self::require_cap();
+		check_admin_referer( 'lzcrs_dismiss' );
 		update_user_meta( get_current_user_id(), 'lzcrs_dismissed_info', 1 );
 		wp_safe_redirect( wp_get_referer() ? wp_get_referer() : admin_url( 'admin.php?page=lzcrs-dashboard' ) );
 		exit;
 	}
 
 	public static function handle_status() {
-		$id = isset( $_POST['lead'] ) ? absint( $_POST['lead'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification -- checked next.
-		self::check( 'lzcrs_status_' . $id );
+		self::require_cap();
+		$id = isset( $_POST['lead'] ) ? absint( $_POST['lead'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- the nonce is per lead, so the id is read first and verified on the next line.
+		check_admin_referer( 'lzcrs_status_' . $id );
 		$status = isset( $_POST['status'] ) ? sanitize_key( wp_unslash( $_POST['status'] ) ) : '';
 		$ok     = Lzcrs_Db::set_status( $id, $status );
 		self::back( array( 'lead' => $id, 'lzcrs_msg' => $ok ? 'status' : 'error' ) );
 	}
 
 	public static function handle_delete() {
-		self::check( 'lzcrs_delete' );
+		self::require_cap();
+		check_admin_referer( 'lzcrs_delete' );
 		$ids = isset( $_REQUEST['leads'] ) ? array_map( 'absint', (array) wp_unslash( $_REQUEST['leads'] ) ) : array();
 		$n   = Lzcrs_Db::delete( $ids );
 		self::back( array( 'lzcrs_msg' => 'deleted', 'n' => $n ) );
@@ -203,7 +206,8 @@ class Lzcrs_Admin {
 		if ( 'lzcrs_delete' !== $a1 && 'lzcrs_delete' !== $a2 ) {
 			return;
 		}
-		self::check( 'lzcrs_bulk' );
+		self::require_cap();
+		check_admin_referer( 'lzcrs_bulk' );
 		$ids = isset( $_POST['leads'] ) ? array_map( 'absint', (array) wp_unslash( $_POST['leads'] ) ) : array();
 		$n   = Lzcrs_Db::delete( $ids );
 		self::back( array( 'lzcrs_msg' => 'deleted', 'n' => $n ) );
@@ -216,7 +220,8 @@ class Lzcrs_Admin {
 	}
 
 	public static function handle_export() {
-		self::check( 'lzcrs_export' );
+		self::require_cap();
+		check_admin_referer( 'lzcrs_export' );
 		$band   = isset( $_GET['band'] ) ? sanitize_key( wp_unslash( $_GET['band'] ) ) : '';
 		$search = isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( $_GET['s'] ) ) : '';
 		$rows   = Lzcrs_Db::query( array( 'band' => $band, 'search' => $search ), 'created_at', 'desc', 100000, 0 );
@@ -544,7 +549,7 @@ class Lzcrs_Admin {
 
 		$pages = wp_dropdown_pages(
 			array(
-				'name'              => Lzcrs_Settings::OPTION . '[privacy_page]',
+				'name'              => esc_attr( Lzcrs_Settings::OPTION . '[privacy_page]' ),
 				'id'                => 'lzcrs-privacy-page',
 				'selected'          => (int) $s['privacy_page'],
 				'show_option_none'  => esc_html__( 'Use the site privacy policy page', 'lawzeek-crs-calculator' ),
