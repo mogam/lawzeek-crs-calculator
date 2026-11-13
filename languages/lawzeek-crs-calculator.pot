@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lawzeek CRS Calculator 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 19:18+0530\n"
+"POT-Creation-Date: 2026-11-13 19:26+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Lawzeek"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:58 includes/class-lzcrs-admin.php:263
+#: includes/class-lzcrs-admin.php:58 includes/class-lzcrs-admin.php:266
 msgid "Lawzeek dashboard"
 msgstr ""
 
@@ -35,8 +35,8 @@ msgid "CRS Leads"
 msgstr ""
 
 #: includes/class-lzcrs-admin.php:59 includes/class-lzcrs-admin.php:104
-#: includes/class-lzcrs-admin.php:326 includes/class-lzcrs-admin.php:397
-#: includes/class-lzcrs-admin.php:539
+#: includes/class-lzcrs-admin.php:329 includes/class-lzcrs-admin.php:400
+#: includes/class-lzcrs-admin.php:542
 msgid "Leads"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgid "CRS Calculator settings"
 msgstr ""
 
 #: includes/class-lzcrs-admin.php:60 includes/class-lzcrs-admin.php:67
-#: includes/class-lzcrs-admin.php:105 includes/class-lzcrs-admin.php:533
+#: includes/class-lzcrs-admin.php:105 includes/class-lzcrs-admin.php:536
 msgid "Settings"
 msgstr ""
 
@@ -69,92 +69,92 @@ msgstr ""
 msgid "Not on a page yet"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:150
+#: includes/class-lzcrs-admin.php:155
 msgid "Do more with your leads."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:150
+#: includes/class-lzcrs-admin.php:155
 msgid ""
 "Lawzeek for immigration consultants adds Express Entry draw alerts, online "
 "booking and a website chatbot."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:152
+#: includes/class-lzcrs-admin.php:156
 msgid "Learn more"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:154
+#: includes/class-lzcrs-admin.php:157
 msgid "Dismiss"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:161
+#: includes/class-lzcrs-admin.php:164
 msgid "Status saved."
 msgstr ""
 
 #. translators: %d: number of deleted leads
-#: includes/class-lzcrs-admin.php:163
+#: includes/class-lzcrs-admin.php:166
 #, php-format
 msgid "%d lead deleted."
 msgid_plural "%d leads deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-lzcrs-admin.php:164
+#: includes/class-lzcrs-admin.php:167
 msgid "That did not work. Please try again."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:268
+#: includes/class-lzcrs-admin.php:271
 msgid "Your shortcode"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:269
+#: includes/class-lzcrs-admin.php:272
 msgid "Put your calculator <em>anywhere</em> on your site."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:270
+#: includes/class-lzcrs-admin.php:273
 msgid ""
 "Paste the shortcode into any page or post, or add the CRS Calculator block. "
 "It picks up your theme's fonts and colours automatically."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:272 includes/class-lzcrs-admin.php:349
+#: includes/class-lzcrs-admin.php:275 includes/class-lzcrs-admin.php:352
 msgid "View page"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:276
+#: includes/class-lzcrs-admin.php:279
 msgid "Shortcode"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:278
+#: includes/class-lzcrs-admin.php:281
 msgid "Copy"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:279
+#: includes/class-lzcrs-admin.php:282
 msgid "With your own heading"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:287
+#: includes/class-lzcrs-admin.php:290
 msgid "Leads this month"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:288 includes/class-lzcrs-admin.php:428
+#: includes/class-lzcrs-admin.php:291 includes/class-lzcrs-admin.php:431
 msgid "All leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:289
+#: includes/class-lzcrs-admin.php:292
 msgid "Hot leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:290
+#: includes/class-lzcrs-admin.php:293
 msgid "Average score"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:298
+#: includes/class-lzcrs-admin.php:301
 msgid "Call these first"
 msgstr ""
 
 #. translators: 1: number of hot leads, 2: number of all leads
-#: includes/class-lzcrs-admin.php:301
+#: includes/class-lzcrs-admin.php:304
 #, php-format
 msgid ""
 "%1$d of your %2$d leads is hot: close to the cutoff or already nominated by "
@@ -165,432 +165,432 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-lzcrs-admin.php:305
+#: includes/class-lzcrs-admin.php:308
 msgid "See hot leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:315
+#: includes/class-lzcrs-admin.php:318
 msgid "Leads in the last 30 days"
 msgstr ""
 
 #. translators: %s: highest number of leads in one day
-#: includes/class-lzcrs-admin.php:317
+#: includes/class-lzcrs-admin.php:320
 #, php-format
 msgid "Best day: %s"
 msgstr ""
 
 #. translators: 1: date, 2: number of leads
-#: includes/class-lzcrs-admin.php:321
+#: includes/class-lzcrs-admin.php:324
 #, php-format
 msgid "%1$s: %2$d lead"
 msgid_plural "%1$s: %2$d leads"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-lzcrs-admin.php:325
+#: includes/class-lzcrs-admin.php:328
 msgid "Today"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:326
+#: includes/class-lzcrs-admin.php:329
 msgid "Show as table"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:326
+#: includes/class-lzcrs-admin.php:329
 msgid "Date"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:333
+#: includes/class-lzcrs-admin.php:336
 msgid "Recent leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:333
+#: includes/class-lzcrs-admin.php:336
 msgid "View all"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:335
+#: includes/class-lzcrs-admin.php:338
 msgid "No leads yet. When visitors use your calculator, they will appear here."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:349
+#: includes/class-lzcrs-admin.php:352
 msgid "Add the calculator to a page"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:349
+#: includes/class-lzcrs-admin.php:352
 msgid "Copy the shortcode above into any page."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:350
+#: includes/class-lzcrs-admin.php:353
 msgid "Add your booking link"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:350
+#: includes/class-lzcrs-admin.php:353
 msgid "Calendly or any appointment page"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:351
+#: includes/class-lzcrs-admin.php:354
 msgid "Set the recent Express Entry cutoff"
 msgstr ""
 
 #. translators: %d: cutoff score
-#: includes/class-lzcrs-admin.php:351
+#: includes/class-lzcrs-admin.php:354
 #, php-format
 msgid "Now %d. Update after each draw."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:352
+#: includes/class-lzcrs-admin.php:355
 msgid "Get your first lead"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:352
+#: includes/class-lzcrs-admin.php:355
 msgid "Try the calculator yourself to see how it works."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:355
+#: includes/class-lzcrs-admin.php:358
 msgid "Setup"
 msgstr ""
 
 #. translators: 1: steps done, 2: total steps
-#: includes/class-lzcrs-admin.php:358
+#: includes/class-lzcrs-admin.php:361
 #, php-format
 msgid "%1$d of %2$d done"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:362
+#: includes/class-lzcrs-admin.php:365
 msgid "Setup progress"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:364 includes/class-lzcrs-frontend.php:132
+#: includes/class-lzcrs-admin.php:367 includes/class-lzcrs-frontend.php:132
 msgid "Done"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:398
+#: includes/class-lzcrs-admin.php:401
 msgid "Everyone who saw their score with your calculator."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:399
+#: includes/class-lzcrs-admin.php:402
 msgid "Export CSV"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:403
+#: includes/class-lzcrs-admin.php:406
 msgid "No leads yet"
 msgstr ""
 
 #. translators: %s: the shortcode
-#: includes/class-lzcrs-admin.php:406
+#: includes/class-lzcrs-admin.php:409
 #, php-format
 msgid ""
 "Add the CRS Calculator block, or the shortcode %s, to any page. Every "
 "visitor who sees their score will appear here."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:417
+#: includes/class-lzcrs-admin.php:420
 msgid "Search leads"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:430
+#: includes/class-lzcrs-admin.php:433
 msgid "Lead not found"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:444 includes/class-lzcrs-frontend.php:168
+#: includes/class-lzcrs-admin.php:447 includes/class-lzcrs-frontend.php:168
 msgid "Estimated CRS score"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:447
+#: includes/class-lzcrs-admin.php:450
 msgid "Profile and score"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:449
+#: includes/class-lzcrs-admin.php:452
 msgid "Yes"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:450
+#: includes/class-lzcrs-admin.php:453
 msgid "No"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:452 includes/class-lzcrs-frontend.php:177
+#: includes/class-lzcrs-admin.php:455 includes/class-lzcrs-frontend.php:177
 msgid "Age"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:453 includes/class-lzcrs-frontend.php:122
+#: includes/class-lzcrs-admin.php:456 includes/class-lzcrs-frontend.php:122
 #: includes/class-lzcrs-frontend.php:178
 msgid "Education"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:454
+#: includes/class-lzcrs-admin.php:457
 msgid "Education in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:455
+#: includes/class-lzcrs-admin.php:458
 msgid "IELTS L / R / W / S"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:456 includes/class-lzcrs-frontend.php:180
+#: includes/class-lzcrs-admin.php:459 includes/class-lzcrs-frontend.php:180
 msgid "French"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:457
+#: includes/class-lzcrs-admin.php:460
 msgid "Canadian work (years)"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:458
+#: includes/class-lzcrs-admin.php:461
 msgid "Work outside Canada (years)"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:459
+#: includes/class-lzcrs-admin.php:462
 msgid "Provincial nomination"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:460
+#: includes/class-lzcrs-admin.php:463
 msgid "Sibling in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:461 includes/class-lzcrs-list-table.php:48
+#: includes/class-lzcrs-admin.php:464 includes/class-lzcrs-list-table.php:48
 msgid "Likely pathway"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:470 includes/class-lzcrs-frontend.php:182
+#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:182
 msgid "Core human capital"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:470 includes/class-lzcrs-frontend.php:183
+#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:183
 msgid "Skill transferability"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:470 includes/class-lzcrs-frontend.php:184
+#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:184
 msgid "Additional points"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:477 includes/class-lzcrs-list-table.php:49
+#: includes/class-lzcrs-admin.php:480 includes/class-lzcrs-list-table.php:49
 msgid "Status"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:480
+#: includes/class-lzcrs-admin.php:483
 msgid "Lead status"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:484
+#: includes/class-lzcrs-admin.php:487
 msgid "Save status"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:486
+#: includes/class-lzcrs-admin.php:489
 msgid "Fastest ways to raise the score"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:492
+#: includes/class-lzcrs-admin.php:495
 msgid "Consent record"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:493
+#: includes/class-lzcrs-admin.php:496
 msgid "Agreed to be contacted about their options"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:494
+#: includes/class-lzcrs-admin.php:497
 msgid "Opted in to updates"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:494
+#: includes/class-lzcrs-admin.php:497
 msgid "Did not opt in to updates: do not add to newsletters"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:496
+#: includes/class-lzcrs-admin.php:499
 msgid "Submitted on"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:501
+#: includes/class-lzcrs-admin.php:504
 msgid "Delete this lead permanently? This cannot be undone."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:501
+#: includes/class-lzcrs-admin.php:504
 msgid "Delete lead"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:533
+#: includes/class-lzcrs-admin.php:536
 msgid "How the calculator looks, scores, books calls and sends you leads."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:539
+#: includes/class-lzcrs-admin.php:542
 msgid "Where new-lead emails go."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:540
+#: includes/class-lzcrs-admin.php:543
 msgid "Send new leads to"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:540
+#: includes/class-lzcrs-admin.php:543
 msgid ""
 "One or more emails, separated by commas. Empty means the site admin email."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:543
+#: includes/class-lzcrs-admin.php:546
 msgid "Scoring"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:543
+#: includes/class-lzcrs-admin.php:546
 msgid "Compared with each visitor's score."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:544
+#: includes/class-lzcrs-admin.php:547
 msgid "Recent Express Entry cutoff"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:544
+#: includes/class-lzcrs-admin.php:547
 msgid ""
 "Shown to visitors (\"N above/below the recent cutoff\") and used to rate "
 "leads Hot, Warm or Cold. Update it after each draw."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:547
+#: includes/class-lzcrs-admin.php:550
 msgid "Booking"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:547
+#: includes/class-lzcrs-admin.php:550
 msgid ""
 "The last step of the form: visitors book a call with you right after seeing "
 "their score."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:548
+#: includes/class-lzcrs-admin.php:551
 msgid "Booking link"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:548
+#: includes/class-lzcrs-admin.php:551
 msgid ""
 "Calendly, Cal.com, Acuity, Google Calendar appointment pages or your own "
 "contact page. Leave empty to hide the booking step."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:549
+#: includes/class-lzcrs-admin.php:552
 msgid "Button text"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:549 includes/class-lzcrs-settings.php:80
+#: includes/class-lzcrs-admin.php:552 includes/class-lzcrs-settings.php:80
 msgid "Book a consultation"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:551
+#: includes/class-lzcrs-admin.php:554
 msgid "How to show it"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:553
+#: includes/class-lzcrs-admin.php:556
 msgid "Button"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:553
+#: includes/class-lzcrs-admin.php:556
 msgid "Opens your booking page in a new tab. Works with any link."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:554
+#: includes/class-lzcrs-admin.php:557
 msgid "Calendar in the result"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:554
+#: includes/class-lzcrs-admin.php:557
 msgid ""
 "Shows your Calendly calendar right under the score. Calendly links only."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:556
+#: includes/class-lzcrs-admin.php:559
 msgid ""
 "With the calendar option, Calendly's page loads in the visitor's browser "
 "when they reach their result."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:560
+#: includes/class-lzcrs-admin.php:563
 msgid "Look"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:560
+#: includes/class-lzcrs-admin.php:563
 msgid "The calculator follows your theme by default."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:562
+#: includes/class-lzcrs-admin.php:565
 msgid "Ask, optional"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:562
+#: includes/class-lzcrs-admin.php:565
 msgid "Ask, required"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:562
+#: includes/class-lzcrs-admin.php:565
 msgid "Do not ask"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:567
+#: includes/class-lzcrs-admin.php:570
 msgid "Colours"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:569
+#: includes/class-lzcrs-admin.php:572
 msgid "Match my theme"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:569
+#: includes/class-lzcrs-admin.php:572
 msgid ""
 "Uses your theme's button colour, fonts and corners. Works on light and dark "
 "themes."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:570 includes/class-lzcrs-admin.php:573
+#: includes/class-lzcrs-admin.php:573 includes/class-lzcrs-admin.php:576
 msgid "Custom colour"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:570
+#: includes/class-lzcrs-admin.php:573
 msgid "Use the colour below for buttons and highlights."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:573
+#: includes/class-lzcrs-admin.php:576
 msgid ""
 "Used when \"Custom colour\" is selected, or when the theme has no button "
 "colour. Text on it turns white or dark automatically."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:574
+#: includes/class-lzcrs-admin.php:577
 msgid "Phone number field"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:575
+#: includes/class-lzcrs-admin.php:578
 msgid "Credit link"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:575
+#: includes/class-lzcrs-admin.php:578
 msgid "Show a small \"CRS calculator by Lawzeek\" link under the calculator"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:583
+#: includes/class-lzcrs-admin.php:586
 msgid "Use the site privacy policy page"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:588
+#: includes/class-lzcrs-admin.php:591
 msgid "Privacy and data"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:588
+#: includes/class-lzcrs-admin.php:591
 msgid "Consent, and what happens to leads if you remove the plugin."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:589
+#: includes/class-lzcrs-admin.php:592
 msgid "Privacy policy page"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:589
+#: includes/class-lzcrs-admin.php:592
 msgid "No pages yet."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:589
+#: includes/class-lzcrs-admin.php:592
 msgid "Linked from the consent checkbox."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:590
+#: includes/class-lzcrs-admin.php:593
 msgid "When deleting the plugin"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:590
+#: includes/class-lzcrs-admin.php:593
 msgid "Also delete all leads and settings"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:590
+#: includes/class-lzcrs-admin.php:593
 msgid "Off by default, so your leads are not lost by accident."
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:593
+#: includes/class-lzcrs-admin.php:596
 msgid "Save settings"
 msgstr ""
 

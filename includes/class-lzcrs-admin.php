@@ -142,15 +142,18 @@ class Lzcrs_Admin {
 	}
 
 	/** Small, dismissible box about the full Lawzeek service. Only on this plugin's own pages. */
+	/**
+	 * A short, dismissible note about Lawzeek for consultants, on the plugin's own screens only.
+	 * Hidden until the service has a public page to link to, so it never points at something people cannot get.
+	 */
 	private static function info_box() {
-		if ( get_user_meta( get_current_user_id(), 'lzcrs_dismissed_info', true ) ) {
+		$url = (string) apply_filters( 'lzcrs_service_url', LZCRS_SERVICE_URL );
+		if ( '' === $url || get_user_meta( get_current_user_id(), 'lzcrs_dismissed_info', true ) ) {
 			return;
 		}
 		$dismiss = wp_nonce_url( admin_url( 'admin-post.php?action=lzcrs_dismiss' ), 'lzcrs_dismiss' );
 		echo '<div class="lzcrs-info"><p><b>' . esc_html__( 'Do more with your leads.', 'lawzeek-crs-calculator' ) . '</b> ' . esc_html__( 'Lawzeek for immigration consultants adds Express Entry draw alerts, online booking and a website chatbot.', 'lawzeek-crs-calculator' ) . '</p><p class="lz-flex lz-gap-3">';
-		if ( LZCRS_SERVICE_URL ) {
-			echo '<a class="lzcrs-btn primary" href="' . esc_url( LZCRS_SERVICE_URL ) . '" target="_blank" rel="noopener">' . esc_html__( 'Learn more', 'lawzeek-crs-calculator' ) . '</a>';
-		}
+		echo '<a class="lzcrs-btn primary" href="' . esc_url( $url ) . '" target="_blank" rel="noopener">' . esc_html__( 'Learn more', 'lawzeek-crs-calculator' ) . '</a>';
 		echo '<a class="lzcrs-btn" href="' . esc_url( $dismiss ) . '">' . esc_html__( 'Dismiss', 'lawzeek-crs-calculator' ) . '</a></p></div>';
 	}
 

@@ -63,20 +63,15 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
 
 The admin screens are styled with Tailwind CSS. The source file is `assets/src/admin.css` and the config is `assets/src/tailwind.config.js`. The built file, `assets/css/admin.css`, is left unminified. Every rule is scoped to the plugin's own screens, so the rest of WordPress is unaffected. The front-end calculator uses plain CSS and JavaScript, with no build step.
 
+The full source, build tools and tests are public on GitHub: https://github.com/mogam/lawzeek-crs-calculator
+
 = Disclaimer =
 
 The calculator gives an estimate, not legal advice. The official score is calculated by IRCC when a candidate submits an Express Entry profile. Keep the "recent cutoff" setting up to date after each draw.
 
-= Want more? =
+= Coming later =
 
-Lawzeek for immigration consultants adds several features to this plugin:
-
-* Express Entry draw alerts that bring old leads back
-* online booking
-* a website chatbot
-* a lead dashboard for your team
-
-This plugin works fully on its own and never requires an account.
+We are building Lawzeek for immigration consultants, a separate service with Express Entry draw alerts, online booking, a website chatbot and a team lead dashboard. It is not available yet. This plugin works fully on its own, has no locked features and never requires an account.
 
 == Installation ==
 
