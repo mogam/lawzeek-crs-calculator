@@ -21,7 +21,7 @@ Admin buttons with white text use darker purples, `#5A58D6` and `#4644B8`, so th
 
 | Path | What it is |
 |---|---|
-| `source/` | The original logo files: app icon, light and dark lockups, preview, colour notes |
+| `source/` | The logo files: app icon, light and dark lockups with the condensed LAWZEEK wordmark (as vector paths), preview, colour notes |
 | `../assets/images/logo.svg` | Plugin logo (the app icon, with an accessible name) |
 | `src/icon.html`, `src/banner.html` | Sources for the WordPress.org listing images |
 | `../.wordpress-org/` | Rendered icon and banners for WordPress.org; rebuild them with `npm run brand:wporg` |
