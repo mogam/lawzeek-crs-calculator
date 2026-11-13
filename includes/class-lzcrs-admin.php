@@ -318,8 +318,7 @@ class Lzcrs_Admin {
 		echo '<div class="lzcrs-chart" aria-hidden="true">';
 		foreach ( $daily as $day => $n ) {
 			$label = wp_date( $fmt, strtotime( $day . ' 12:00:00 UTC' ) );
-			/* translators: 1: date, 2: number of leads */
-			$tip = sprintf( _n( '%1$s: %2$d lead', '%1$s: %2$d leads', $n, 'lawzeek-crs-calculator' ), $label, $n );
+			$tip = sprintf( /* translators: 1: date, 2: number of leads */ _n( '%1$s: %2$d lead', '%1$s: %2$d leads', $n, 'lawzeek-crs-calculator' ), $label, $n );
 			echo '<div class="lzcrs-bar' . ( $n ? '' : ' zero' ) . '" data-tip="' . esc_attr( $tip ) . '"><span style="height:' . esc_attr( $n ? max( 3, round( $n / $peak * 100 ) ) : 0 ) . '%"></span></div>';
 		}
 		$keys = array_keys( $daily );
