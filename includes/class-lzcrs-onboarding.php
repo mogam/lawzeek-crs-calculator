@@ -45,7 +45,7 @@ class Lzcrs_Onboarding {
 
 	/**
 	 * Where to send the user after activation, or '' to stay. Clears the one-time flag.
-	 * No redirect for bulk activation, network admin, AJAX, WP-CLI, users who cannot manage the plugin, or when setup is done.
+	 * No redirect for bulk activation, network admin, AJAX, users who cannot manage the plugin, or when setup is done.
 	 */
 	public static function redirect_url() {
 		if ( ! get_transient( self::REDIRECT ) ) {
@@ -53,13 +53,17 @@ class Lzcrs_Onboarding {
 		}
 		delete_transient( self::REDIRECT );
 		$bulk = isset( $_GET['activate-multi'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only check of WordPress's own bulk-activation flag.
-		if ( $bulk || wp_doing_ajax() || is_network_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) || ! current_user_can( Lzcrs_Admin::CAP ) || get_option( self::DONE ) ) {
+		if ( $bulk || wp_doing_ajax() || is_network_admin() || ! current_user_can( Lzcrs_Admin::CAP ) || get_option( self::DONE ) ) {
 			return '';
 		}
 		return self::url();
 	}
 
+	/** Runs on admin_init. Never redirects command-line requests (WP-CLI). */
 	public static function maybe_redirect() {
+		if ( defined( 'WP_CLI' ) && WP_CLI ) {
+			return;
+		}
 		$url = self::redirect_url();
 		if ( $url ) {
 			wp_safe_redirect( $url );
