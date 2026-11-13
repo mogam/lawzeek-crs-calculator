@@ -35,7 +35,14 @@ require_once LZCRS_DIR . 'includes/class-lzcrs-rest.php';
 require_once LZCRS_DIR . 'includes/class-lzcrs-frontend.php';
 require_once LZCRS_DIR . 'includes/class-lzcrs-privacy.php';
 
-register_activation_hook( __FILE__, array( 'Lzcrs_Db', 'install' ) );
+require_once LZCRS_DIR . 'includes/class-lzcrs-onboarding.php';
+
+/** Creates the leads table and asks for the setup screen once. */
+function lzcrs_activate() {
+	Lzcrs_Db::install();
+	Lzcrs_Onboarding::activate();
+}
+register_activation_hook( __FILE__, 'lzcrs_activate' );
 
 add_action( 'plugins_loaded', array( 'Lzcrs_Db', 'maybe_upgrade' ) );
 Lzcrs_Settings::init();
@@ -46,4 +53,5 @@ Lzcrs_Privacy::init();
 if ( is_admin() ) {
 	require_once LZCRS_DIR . 'includes/class-lzcrs-admin.php';
 	Lzcrs_Admin::init();
+	Lzcrs_Onboarding::init();
 }
