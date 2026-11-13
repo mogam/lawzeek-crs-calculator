@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lawzeek">
-  <rect width="64" height="64" rx="16" fill="#0f4c5c"/>
-  <path d="M15 12h8v28h26v8H15z" fill="#ffffff"/>
-  <path d="M29.6 33.2l-3.8-3.8L40 15.2h-9.2V9.6H49.6v18.8H44v-9.2z" fill="#ff5a6e"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" role="img" aria-label="Lawzeek"><rect width="100" height="100" rx="10" fill="#2a2219"/><g transform="translate(8 8) scale(0.84)"><path d="M18 38H34M18 62H34" fill="none" stroke="#f5bc41" stroke-width="7.5" stroke-linecap="round"/><path d="M72 50H81" fill="none" stroke="#7473ed" stroke-width="7.5" stroke-linecap="round"/><path d="M34 26H48A24 24 0 0 1 48 74H34Z" fill="none" stroke="#f7f4ed" stroke-width="7.5" stroke-linejoin="round"/><circle cx="84" cy="50" r="6" fill="#7473ed"/></g></svg>

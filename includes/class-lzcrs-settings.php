@@ -80,7 +80,7 @@ class Lzcrs_Settings {
 			'text'  => '' !== $s['cta_text'] ? $s['cta_text'] : __( 'Book a consultation', 'lawzeek-crs-calculator' ),
 			'url'   => $s['cta_url'],
 			'mode'  => $inline ? 'inline' : 'button',
-			'embed' => $inline ? add_query_arg( array( 'embed_domain' => $host, 'embed_type' => 'Inline', 'hide_gdpr_banner' => '1' ), $s['cta_url'] ) : null,
+			'embed' => $inline ? add_query_arg( array( 'embed_domain' => $host, 'embed_type' => 'Inline' ), $s['cta_url'] ) : null,
 		);
 	}
 

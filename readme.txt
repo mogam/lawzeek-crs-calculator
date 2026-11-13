@@ -1,5 +1,5 @@
 === Lawzeek CRS Calculator ===
-Contributors: lawzeek
+Contributors: pushpakt
 Tags: crs calculator, express entry, immigration, canada, lead generation
 Requires at least: 6.5
 Tested up to: 7.1
@@ -63,20 +63,17 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
 
 The admin screens are styled with Tailwind CSS. The source file is `assets/src/admin.css` and the config is `assets/src/tailwind.config.js`. The built file, `assets/css/admin.css`, is left unminified. Every rule is scoped to the plugin's own screens, so the rest of WordPress is unaffected. The front-end calculator uses plain CSS and JavaScript, with no build step.
 
+The admin screens use the Google Sans font, bundled in `assets/fonts` under the SIL Open Font License 1.1 (see `assets/fonts/OFL.txt`). It is loaded from your own site, never from Google.
+
+The full source, build tools and tests are public on GitHub: https://github.com/mogam/lawzeek-crs-calculator
+
 = Disclaimer =
 
 The calculator gives an estimate, not legal advice. The official score is calculated by IRCC when a candidate submits an Express Entry profile. Keep the "recent cutoff" setting up to date after each draw.
 
-= Want more? =
+= Coming later =
 
-Lawzeek for immigration consultants adds several features to this plugin:
-
-* Express Entry draw alerts that bring old leads back
-* online booking
-* a website chatbot
-* a lead dashboard for your team
-
-This plugin works fully on its own and never requires an account.
+We are building Lawzeek for immigration consultants, a separate service with Express Entry draw alerts, online booking, a website chatbot and a team lead dashboard. It is not available yet. This plugin works fully on its own, has no locked features and never requires an account.
 
 == Installation ==
 
@@ -136,6 +133,7 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 
 = 1.0.0 =
 * First release:
+  * dashboard with your shortcode, lead numbers and a 30-day leads chart;
   * CRS calculator (single applicant, CRS rules of 2025-03-25);
   * leads screen, CSV export and email alerts;
   * block and shortcode;
@@ -145,6 +143,18 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 
 = 1.0.0 =
 First release.
+
+== External services ==
+
+This plugin makes no requests of its own to any outside server. It can connect to one service, only if the site owner turns it on:
+
+**Calendly** (calendly.com) shows a booking calendar inside the calculator result.
+
+* When: only if the site owner enters a calendly.com link in Settings → Booking and chooses "Calendar in the result". It is off by default.
+* What is sent: when a visitor reaches their result, their browser loads the site owner's Calendly booking page in a frame. The frame's address includes your site's domain name (Calendly requires it for embedding), and Calendly receives the usual browser request data, such as the IP address and browser type. Calendly may show its own cookie notice. The plugin does not send the visitor's name, email, answers or score to Calendly. If the visitor books a call, they enter their details on Calendly's page.
+* Calendly terms for people who book: https://calendly.com/legal/participant-terms-conditions
+* Calendly terms for account holders: https://calendly.com/legal/customer-terms-conditions
+* Calendly privacy notice: https://calendly.com/legal/privacy-notice
 
 == Privacy ==
 
@@ -159,4 +169,4 @@ It also stores a one-way hash of the visitor's IP address, used for rate limitin
 
 The plugin does not send this data to Lawzeek or to any third party, and makes no external HTTP requests.
 
-If you choose to show your Calendly calendar inside the result, Calendly's booking page loads in the visitor's browser when they reach their result. Calendly's own privacy policy applies to that page. With the default "Button" option, nothing loads until the visitor clicks. Site owners can export or erase a visitor's data from Tools → Export / Erase Personal Data.
+If you choose to show your Calendly calendar inside the result, Calendly's booking page loads in the visitor's browser when they reach their result. See "External services" below. With the default "Button" option, nothing loads until the visitor clicks. Site owners can export or erase a visitor's data from Tools → Export / Erase Personal Data.

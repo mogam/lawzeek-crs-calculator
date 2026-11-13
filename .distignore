@@ -2,6 +2,7 @@
 /.git
 /.github
 /.wordpress-org
+/brand
 /.distignore
 /.gitignore
 /.wp-env.json

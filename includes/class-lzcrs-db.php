@@ -137,6 +137,35 @@ class Lzcrs_Db {
 		);
 	}
 
+	/**
+	 * Leads per day for the last $days days, keyed by site-timezone date (Y-m-d), oldest first.
+	 *
+	 * @param int $days Number of days, today included.
+	 * @return array<string,int>
+	 */
+	public static function daily( $days = 30 ) {
+		global $wpdb;
+		$days  = max( 1, (int) $days );
+		$tz    = wp_timezone();
+		$utc   = new DateTimeZone( 'UTC' );
+		$today = new DateTimeImmutable( 'today', $tz );
+		$out   = array();
+		for ( $i = $days - 1; $i >= 0; $i-- ) {
+			$out[ $today->modify( "-$i days" )->format( 'Y-m-d' ) ] = 0;
+		}
+		$since = $today->modify( '-' . ( $days - 1 ) . ' days' )->setTimezone( $utc )->format( 'Y-m-d H:i:s' );
+		$table = self::table();
+		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name is fixed.
+		$rows = $wpdb->get_col( $wpdb->prepare( "SELECT created_at FROM $table WHERE created_at >= %s", $since ) );
+		foreach ( (array) $rows as $when ) {
+			$day = ( new DateTimeImmutable( $when, $utc ) )->setTimezone( $tz )->format( 'Y-m-d' );
+			if ( isset( $out[ $day ] ) ) {
+				++$out[ $day ];
+			}
+		}
+		return $out;
+	}
+
 	public static function set_status( $id, $status ) {
 		global $wpdb;
 		if ( ! in_array( $status, self::STATUSES, true ) ) {

@@ -1,0 +1,6 @@
+Logo colours (icon unchanged from the approved logic-gate design):
+Left pins #F5BC41 yellow
+Right output wire and tip #7473ED purple
+Gate body #F7F4ED cream
+Square and wordmark #2A2219 dark brown
+Wordmark: LAWZEEK in a condensed bold uppercase face, converted to vector paths (see wordmark.txt).

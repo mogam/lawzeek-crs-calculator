@@ -19,12 +19,13 @@ class Lzcrs_Admin {
 	const CAP = 'manage_options';
 
 	/**
-	 * The Lawzeek mark ("L" with a rising arrow) in one colour, for the admin sidebar.
-	 * WordPress recolours SVG menu icons to fit the user's admin colour scheme.
+	 * The Lawzeek mark (a logic gate: two inputs, one output) in one colour, for the admin sidebar.
+	 * Filled shapes only: WordPress recolours SVG menu icons by their fill to match the admin colour scheme.
 	 */
-	const MENU_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="black" d="M3 2h3v13h11v3H3z"/><path fill="black" d="M9.2 11.9 7.9 10.6l5-5H10V3.4h6.6V10h-2.2V7.1z"/></svg>';
+	const MENU_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0.6" y="6.05" width="5" height="1.9" rx="0.95" fill="black"/><rect x="0.6" y="12.05" width="5" height="1.9" rx="0.95" fill="black"/><path fill="black" fill-rule="evenodd" d="M4.05 3.05H8.5A6.95 6.95 0 0 1 8.5 16.95H4.05ZM5.95 4.95V15.05H8.5A5.05 5.05 0 0 0 8.5 4.95Z"/><rect x="14.4" y="9.05" width="2.8" height="1.9" fill="black"/><circle cx="17.5" cy="10" r="1.6" fill="black"/></svg>';
 
 	const ICON_COPY  = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M13 4.5V4a1.5 1.5 0 0 0-1.5-1.5h-7A1.5 1.5 0 0 0 3 4v7a1.5 1.5 0 0 0 1.5 1.5H5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+	const ICON_OPEN  = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4H5.5A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5V12M11 4h5v5m0-5-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 	const ICON_ARROW = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 	/** @var string Screen hook of the Leads page, used for bulk actions. */
@@ -141,15 +142,18 @@ class Lzcrs_Admin {
 	}
 
 	/** Small, dismissible box about the full Lawzeek service. Only on this plugin's own pages. */
+	/**
+	 * A short, dismissible note about Lawzeek for consultants, on the plugin's own screens only.
+	 * Hidden until the service has a public page to link to, so it never points at something people cannot get.
+	 */
 	private static function info_box() {
-		if ( get_user_meta( get_current_user_id(), 'lzcrs_dismissed_info', true ) ) {
+		$url = (string) apply_filters( 'lzcrs_service_url', LZCRS_SERVICE_URL );
+		if ( '' === $url || get_user_meta( get_current_user_id(), 'lzcrs_dismissed_info', true ) ) {
 			return;
 		}
 		$dismiss = wp_nonce_url( admin_url( 'admin-post.php?action=lzcrs_dismiss' ), 'lzcrs_dismiss' );
 		echo '<div class="lzcrs-info"><p><b>' . esc_html__( 'Do more with your leads.', 'lawzeek-crs-calculator' ) . '</b> ' . esc_html__( 'Lawzeek for immigration consultants adds Express Entry draw alerts, online booking and a website chatbot.', 'lawzeek-crs-calculator' ) . '</p><p class="lz-flex lz-gap-3">';
-		if ( LZCRS_SERVICE_URL ) {
-			echo '<a class="lzcrs-btn primary" href="' . esc_url( LZCRS_SERVICE_URL ) . '" target="_blank" rel="noopener">' . esc_html__( 'Learn more', 'lawzeek-crs-calculator' ) . '</a>';
-		}
+		echo '<a class="lzcrs-btn primary" href="' . esc_url( $url ) . '" target="_blank" rel="noopener">' . esc_html__( 'Learn more', 'lawzeek-crs-calculator' ) . '</a>';
 		echo '<a class="lzcrs-btn" href="' . esc_url( $dismiss ) . '">' . esc_html__( 'Dismiss', 'lawzeek-crs-calculator' ) . '</a></p></div>';
 	}
 
@@ -261,19 +265,23 @@ class Lzcrs_Admin {
 		self::open( 'lzcrs-dashboard' );
 		echo '<h1 class="screen-reader-text">' . esc_html__( 'Lawzeek dashboard', 'lawzeek-crs-calculator' ) . '</h1><hr class="wp-header-end lz-hidden">';
 
-		// 1. Shortcode first: the one thing every new user needs.
+		// 1. Shortcode first: the one thing every new user needs, shown inside a browser window.
+		$host = wp_parse_url( $page ? get_permalink( $page ) : home_url( '/' ), PHP_URL_HOST ) . ( $page ? wp_parse_url( get_permalink( $page ), PHP_URL_PATH ) : '' );
 		echo '<section class="lzcrs-hero" aria-labelledby="lzcrs-hero-title"><div>';
 		echo '<span class="lzcrs-eyebrow">' . esc_html__( 'Your shortcode', 'lawzeek-crs-calculator' ) . '</span>';
 		echo '<h2 id="lzcrs-hero-title">' . wp_kses( __( 'Put your calculator <em>anywhere</em> on your site.', 'lawzeek-crs-calculator' ), array( 'em' => array() ) ) . '</h2>';
-		echo '<p>' . esc_html__( 'Paste the shortcode into any page or post, or add the CRS Calculator block. It picks up your theme\'s fonts and colours automatically.', 'lawzeek-crs-calculator' ) . '</p></div>';
-		echo '<div class="lzcrs-code-card"><div class="lzcrs-code-field"><code data-testid="lzcrs-shortcode">[lawzeek_crs]</code>';
-		echo '<button type="button" class="lzcrs-btn primary" data-lzcrs-copy="[lawzeek_crs]">' . self::ICON_COPY . '<span>' . esc_html__( 'Copy', 'lawzeek-crs-calculator' ) . '</span></button></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
-		echo '<p class="lz-mt-4 lz-mb-1 lz-text-[13px] lz-text-ink-muted">' . esc_html__( 'With your own heading:', 'lawzeek-crs-calculator' ) . '</p>';
-		echo '<code class="lzcrs-code lz-inline-block lz-whitespace-nowrap lz-max-w-full lz-overflow-x-auto">[lawzeek_crs title="Your PR chances"]</code>';
+		echo '<p>' . esc_html__( 'Paste the shortcode into any page or post, or add the CRS Calculator block. It picks up your theme\'s fonts and colours automatically.', 'lawzeek-crs-calculator' ) . '</p>';
 		if ( $page ) {
-			echo '<p class="lz-mt-2 lz-mb-0 lz-text-[13px]"><a href="' . esc_url( get_permalink( $page ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'View page', 'lawzeek-crs-calculator' ) . ' &rarr;</a></p>';
+			echo '<p class="lz-mt-6"><a class="lzcrs-btn" href="' . esc_url( get_permalink( $page ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'View page', 'lawzeek-crs-calculator' ) . self::ICON_OPEN . '</a></p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
 		}
-		echo '</div></section>';
+		echo '</div>';
+		echo '<div class="lzcrs-browser"><div class="lzcrs-browser-bar" aria-hidden="true"><i></i><i></i><i></i><span class="lzcrs-url">' . esc_html( $host ) . '</span></div><div class="lzcrs-browser-body">';
+		echo '<span class="lzcrs-label">' . esc_html__( 'Shortcode', 'lawzeek-crs-calculator' ) . '</span>';
+		echo '<div class="lzcrs-code-field"><code data-testid="lzcrs-shortcode">[lawzeek_crs]</code>';
+		echo '<button type="button" class="lzcrs-btn primary" data-lzcrs-copy="[lawzeek_crs]">' . self::ICON_COPY . '<span>' . esc_html__( 'Copy', 'lawzeek-crs-calculator' ) . '</span></button></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
+		echo '<div class="lzcrs-divider">' . esc_html__( 'With your own heading', 'lawzeek-crs-calculator' ) . '</div>';
+		echo '<code class="lzcrs-code lz-inline-block lz-whitespace-nowrap lz-max-w-full lz-overflow-x-auto">[lawzeek_crs title="Your PR chances"]</code>';
+		echo '</div></div></section>';
 
 		self::info_box();
 
@@ -300,10 +308,32 @@ class Lzcrs_Admin {
 			) . ' <a href="' . esc_url( admin_url( 'admin.php?page=lzcrs-leads&band=hot' ) ) . '">' . esc_html__( 'See hot leads', 'lawzeek-crs-calculator' ) . '</a></p></div>';
 		}
 
-		echo '<div class="lz-grid lz-gap-6 lz-items-start lg:lz-grid-cols-3">';
+		echo '<div class="lz-grid lz-gap-6 lz-items-start lg:lz-grid-cols-3"><div class="lz-grid lz-gap-6 lg:lz-col-span-2">';
 
-		// 3. Recent leads.
-		echo '<section class="lzcrs-card lg:lz-col-span-2"><div class="lzcrs-card-h"><h2 class="lzcrs-h2">' . esc_html__( 'Recent leads', 'lawzeek-crs-calculator' ) . '</h2><a class="lzcrs-btn" href="' . esc_url( admin_url( 'admin.php?page=lzcrs-leads' ) ) . '">' . esc_html__( 'View all', 'lawzeek-crs-calculator' ) . self::ICON_ARROW . '</a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
+		// 3. Leads per day, last 30 days: one series, so no legend; hover tooltips and a table view.
+		$daily = Lzcrs_Db::daily( 30 );
+		$sum   = array_sum( $daily );
+		$peak  = max( 1, max( $daily ) );
+		$fmt   = get_option( 'date_format' );
+		echo '<section class="lzcrs-card" data-testid="lzcrs-chart"><div class="lzcrs-card-b"><div class="lz-flex lz-items-start lz-justify-between lz-gap-4"><div><h2 class="lzcrs-h2">' . esc_html__( 'Leads in the last 30 days', 'lawzeek-crs-calculator' ) . '</h2>';
+		echo '<p class="lzcrs-big-num lz-mt-1">' . esc_html( number_format_i18n( $sum ) ) . '</p></div>';
+		echo '<span class="lz-text-[13px] lz-text-ink-muted">' . esc_html( sprintf( /* translators: %s: highest number of leads in one day */ __( 'Best day: %s', 'lawzeek-crs-calculator' ), number_format_i18n( max( $daily ) ) ) ) . '</span></div>';
+		echo '<div class="lzcrs-chart" aria-hidden="true">';
+		foreach ( $daily as $day => $n ) {
+			$label = wp_date( $fmt, strtotime( $day . ' 12:00:00 UTC' ) );
+			$tip = sprintf( /* translators: 1: date, 2: number of leads */ _n( '%1$s: %2$d lead', '%1$s: %2$d leads', $n, 'lawzeek-crs-calculator' ), $label, $n );
+			echo '<div class="lzcrs-bar' . ( $n ? '' : ' zero' ) . '" data-tip="' . esc_attr( $tip ) . '"><span style="height:' . esc_attr( $n ? max( 3, round( $n / $peak * 100 ) ) : 0 ) . '%"></span></div>';
+		}
+		$keys = array_keys( $daily );
+		echo '</div><div class="lzcrs-axis" aria-hidden="true"><span>' . esc_html( wp_date( 'M j', strtotime( reset( $keys ) . ' 12:00:00 UTC' ) ) ) . '</span><span>' . esc_html__( 'Today', 'lawzeek-crs-calculator' ) . '</span></div>';
+		echo '<details class="lz-mt-4"><summary class="lz-cursor-pointer lz-text-[13px] lz-text-ink-muted">' . esc_html__( 'Show as table', 'lawzeek-crs-calculator' ) . '</summary><table class="widefat striped lz-mt-2"><thead><tr><th scope="col">' . esc_html__( 'Date', 'lawzeek-crs-calculator' ) . '</th><th scope="col">' . esc_html__( 'Leads', 'lawzeek-crs-calculator' ) . '</th></tr></thead><tbody>';
+		foreach ( array_reverse( $daily, true ) as $day => $n ) {
+			echo '<tr><td>' . esc_html( wp_date( $fmt, strtotime( $day . ' 12:00:00 UTC' ) ) ) . '</td><td>' . esc_html( number_format_i18n( $n ) ) . '</td></tr>';
+		}
+		echo '</tbody></table></details></div></section>';
+
+		// 4. Recent leads.
+		echo '<section class="lzcrs-card"><div class="lzcrs-card-h"><h2 class="lzcrs-h2">' . esc_html__( 'Recent leads', 'lawzeek-crs-calculator' ) . '</h2><a class="lzcrs-btn" href="' . esc_url( admin_url( 'admin.php?page=lzcrs-leads' ) ) . '">' . esc_html__( 'View all', 'lawzeek-crs-calculator' ) . self::ICON_ARROW . '</a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
 		if ( ! $recent ) {
 			echo '<div class="lzcrs-card-b lz-text-center lz-py-12"><p class="lz-m-0 lz-text-ink-muted">' . esc_html__( 'No leads yet. When visitors use your calculator, they will appear here.', 'lawzeek-crs-calculator' ) . '</p></div>';
 		} else {
@@ -311,27 +341,28 @@ class Lzcrs_Admin {
 			foreach ( $recent as $r ) {
 				echo '<li class="lz-m-0 lz-flex lz-items-center lz-justify-between lz-gap-4 lz-px-6 lz-py-3.5 lz-border-0 lz-border-b lz-border-solid lz-border-ink-line last:lz-border-b-0">';
 				echo '<span class="lz-min-w-0"><a class="lz-font-semibold lz-no-underline lz-text-ink" href="' . esc_url( admin_url( 'admin.php?page=lzcrs-leads&lead=' . (int) $r['id'] ) ) . '">' . esc_html( $r['name'] ) . '</a><span class="lz-block lz-text-[13px] lz-text-ink-muted lz-truncate">' . esc_html( $r['email'] . ' · ' . self::when( $r['created_at'] ) ) . '</span></span>';
-				echo '<span class="lz-flex lz-items-center lz-gap-3 lz-shrink-0"><b class="lz-font-serif lz-font-normal lz-text-[22px]">' . esc_html( $r['total'] ) . '</b>' . self::badge( $r['band'] ) . '</span></li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- badge() escapes.
+				echo '<span class="lz-flex lz-items-center lz-gap-3 lz-shrink-0"><b class="lz-text-[17px] lz-font-semibold" style="font-variant-numeric:tabular-nums">' . esc_html( $r['total'] ) . '</b>' . self::badge( $r['band'] ) . '</span></li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- badge() escapes.
 			}
 			echo '</ul>';
 		}
-		echo '</section>';
+		echo '</section></div>';
 
-		// 4. Setup, as numbered steps.
+		// 5. Setup, as numbered steps with a progress meter.
 		$steps = array(
 			array( (bool) $page, __( 'Add the calculator to a page', 'lawzeek-crs-calculator' ), $page ? '<a href="' . esc_url( get_permalink( $page ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'View page', 'lawzeek-crs-calculator' ) . '</a>' : esc_html__( 'Copy the shortcode above into any page.', 'lawzeek-crs-calculator' ) ),
 			array( '' !== $s['cta_url'], __( 'Add your booking link', 'lawzeek-crs-calculator' ), '<a href="' . esc_url( admin_url( 'admin.php?page=lzcrs-settings#lzcrs-booking' ) ) . '">' . esc_html__( 'Calendly or any appointment page', 'lawzeek-crs-calculator' ) . '</a>' ),
 			array( 500 !== (int) $s['cutoff'], __( 'Set the recent Express Entry cutoff', 'lawzeek-crs-calculator' ), '<a href="' . esc_url( admin_url( 'admin.php?page=lzcrs-settings' ) ) . '">' . esc_html( sprintf( /* translators: %d: cutoff score */ __( 'Now %d. Update after each draw.', 'lawzeek-crs-calculator' ), (int) $s['cutoff'] ) ) . '</a>' ),
 			array( $stats['total'] > 0, __( 'Get your first lead', 'lawzeek-crs-calculator' ), esc_html__( 'Try the calculator yourself to see how it works.', 'lawzeek-crs-calculator' ) ),
 		);
+		$done = count( array_filter( wp_list_pluck( $steps, 0 ) ) );
 		echo '<section class="lzcrs-card"><div class="lzcrs-card-h"><h2 class="lzcrs-h2">' . esc_html__( 'Setup', 'lawzeek-crs-calculator' ) . '</h2><span class="lz-text-[13px] lz-text-ink-muted">' . esc_html(
 			sprintf(
 				/* translators: 1: steps done, 2: total steps */
 				__( '%1$d of %2$d done', 'lawzeek-crs-calculator' ),
-				count( array_filter( wp_list_pluck( $steps, 0 ) ) ),
+				$done,
 				count( $steps )
 			)
-		) . '</span></div><div class="lzcrs-card-b"><ol class="lzcrs-steps-list" data-testid="lzcrs-checklist">';
+		) . '</span></div><div class="lzcrs-card-b"><div class="lzcrs-meter lz-mb-5" role="progressbar" aria-valuemin="0" aria-valuemax="' . esc_attr( count( $steps ) ) . '" aria-valuenow="' . esc_attr( $done ) . '" aria-label="' . esc_attr__( 'Setup progress', 'lawzeek-crs-calculator' ) . '"><span style="width:' . esc_attr( round( $done / count( $steps ) * 100 ) ) . '%"></span></div><ol class="lzcrs-steps-list" data-testid="lzcrs-checklist">';
 		foreach ( $steps as $i => $st ) {
 			$num = $st[0] ? '<span class="lzcrs-num done" aria-label="' . esc_attr__( 'Done', 'lawzeek-crs-calculator' ) . '">&#10003;</span>' : '<span class="lzcrs-num">' . esc_html( sprintf( '%02d', $i + 1 ) ) . '</span>';
 			echo '<li' . ( $st[0] ? ' class="done"' : '' ) . '>' . $num . '<span><b class="lz-block">' . esc_html( $st[1] ) . '</b><span class="lz-text-[13px] lz-text-ink-muted">' . $st[2] . '</span></span></li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from escaped parts above.
