@@ -2,6 +2,15 @@
  * Source for assets/css/admin.css (Lawzeek admin screens). Built with Tailwind CSS 3.
  * Utilities are prefixed "lz-" and scoped to .lzcrs-app, so they never touch the rest of wp-admin.
  */
+/* Google Sans (SIL Open Font License 1.1, see assets/fonts/OFL.txt), bundled so the admin makes no outside requests. */
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/google-sans-latin.woff2") format("woff2");
+}
+
 @tailwind components;
 @tailwind utilities;
 

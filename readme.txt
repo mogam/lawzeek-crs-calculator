@@ -63,6 +63,8 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
 
 The admin screens are styled with Tailwind CSS. The source file is `assets/src/admin.css` and the config is `assets/src/tailwind.config.js`. The built file, `assets/css/admin.css`, is left unminified. Every rule is scoped to the plugin's own screens, so the rest of WordPress is unaffected. The front-end calculator uses plain CSS and JavaScript, with no build step.
 
+The admin screens use the Google Sans font, bundled in `assets/fonts` under the SIL Open Font License 1.1 (see `assets/fonts/OFL.txt`). It is loaded from your own site, never from Google.
+
 The full source, build tools and tests are public on GitHub: https://github.com/mogam/lawzeek-crs-calculator
 
 = Disclaimer =

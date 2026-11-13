@@ -3,10 +3,24 @@
  * Utilities are prefixed "lz-" and scoped to .lzcrs-app, so they never touch the rest of wp-admin.
  */
 
+/* Google Sans (SIL Open Font License 1.1, see assets/fonts/OFL.txt), bundled so the admin makes no outside requests. */
+
+@font-face {
+  font-family: "Google Sans";
+
+  font-style: normal;
+
+  font-weight: 400 700;
+
+  font-display: swap;
+
+  src: url("../fonts/google-sans-latin.woff2") format("woff2");
+}
+
 .lzcrs-app {
   --tw-bg-opacity: 1;
   background-color: rgb(246 249 252 / var(--tw-bg-opacity, 1));
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Google Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: 14px;
   line-height: 1.5;
   --tw-text-opacity: 1;
