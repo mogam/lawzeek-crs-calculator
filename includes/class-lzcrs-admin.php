@@ -19,10 +19,10 @@ class Lzcrs_Admin {
 	const CAP = 'manage_options';
 
 	/**
-	 * The Lawzeek mark ("L" with a rising arrow) in one colour, for the admin sidebar.
-	 * WordPress recolours SVG menu icons to fit the user's admin colour scheme.
+	 * The Lawzeek mark (a logic gate: two inputs, one output) in one colour, for the admin sidebar.
+	 * Filled shapes only: WordPress recolours SVG menu icons by their fill to match the admin colour scheme.
 	 */
-	const MENU_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="black" d="M3 2h3v13h11v3H3z"/><path fill="black" d="M9.2 11.9 7.9 10.6l5-5H10V3.4h6.6V10h-2.2V7.1z"/></svg>';
+	const MENU_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0.6" y="6.05" width="5" height="1.9" rx="0.95" fill="black"/><rect x="0.6" y="12.05" width="5" height="1.9" rx="0.95" fill="black"/><path fill="black" fill-rule="evenodd" d="M4.05 3.05H8.5A6.95 6.95 0 0 1 8.5 16.95H4.05ZM5.95 4.95V15.05H8.5A5.05 5.05 0 0 0 8.5 4.95Z"/><rect x="14.4" y="9.05" width="2.8" height="1.9" fill="black"/><circle cx="17.5" cy="10" r="1.6" fill="black"/></svg>';
 
 	const ICON_COPY  = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M13 4.5V4a1.5 1.5 0 0 0-1.5-1.5h-7A1.5 1.5 0 0 0 3 4v7a1.5 1.5 0 0 0 1.5 1.5H5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
 	const ICON_ARROW = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';

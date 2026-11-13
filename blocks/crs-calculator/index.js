@@ -6,7 +6,23 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 
+	// The Lawzeek logo as the block icon.
+	var logo = el(
+		'svg',
+		{ xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 100 100', width: 24, height: 24, 'aria-hidden': 'true' },
+		el( 'rect', { width: 100, height: 100, rx: 10, fill: '#2a2219' } ),
+		el(
+			'g',
+			{ transform: 'translate(8 8) scale(0.84)' },
+			el( 'path', { d: 'M18 38H34M18 62H34', fill: 'none', stroke: '#f5bc41', strokeWidth: 7.5, strokeLinecap: 'round' } ),
+			el( 'path', { d: 'M72 50H81', fill: 'none', stroke: '#7473ed', strokeWidth: 7.5, strokeLinecap: 'round' } ),
+			el( 'path', { d: 'M34 26H48A24 24 0 0 1 48 74H34Z', fill: 'none', stroke: '#f7f4ed', strokeWidth: 7.5, strokeLinejoin: 'round' } ),
+			el( 'circle', { cx: 84, cy: 50, r: 6, fill: '#7473ed' } )
+		)
+	);
+
 	blocks.registerBlockType( 'lawzeek/crs-calculator', {
+		icon: logo,
 		edit: function ( props ) {
 			var blockProps = blockEditor.useBlockProps();
 			return el(
@@ -29,7 +45,7 @@
 				el(
 					components.Placeholder,
 					{
-						icon: 'calculator',
+						icon: logo,
 						label: __( 'CRS Calculator', 'lawzeek-crs-calculator' ),
 						instructions: __( 'Visitors will see the CRS calculator here. Leads appear under CRS Leads in your dashboard.', 'lawzeek-crs-calculator' ),
 					}

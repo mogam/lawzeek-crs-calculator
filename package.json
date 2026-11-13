@@ -14,7 +14,8 @@
     "test:e2e": "playwright test",
     "lint:php": "composer lint",
     "zip": "bash bin/build-zip.sh",
-    "i18n:pot": "bash bin/make-pot.sh"
+    "i18n:pot": "bash bin/make-pot.sh",
+    "brand:wporg": "bash bin/brand-wporg.sh"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",
