@@ -264,6 +264,9 @@ class Lzcrs_Admin {
 
 		self::open( 'lzcrs-dashboard' );
 		echo '<h1 class="screen-reader-text">' . esc_html__( 'Lawzeek dashboard', 'lawzeek-crs-calculator' ) . '</h1><hr class="wp-header-end lz-hidden">';
+		if ( isset( $_GET['lzcrs_msg'] ) && 'welcome' === $_GET['lzcrs_msg'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display-only message after setup.
+			echo '<div class="lzcrs-welcome" role="status" data-testid="lzcrs-welcome"><b>' . esc_html__( 'You are all set.', 'lawzeek-crs-calculator' ) . '</b> ' . esc_html__( 'Copy the shortcode below into any page to show your calculator.', 'lawzeek-crs-calculator' ) . '</div>';
+		}
 
 		// 1. Shortcode first: the one thing every new user needs, shown inside a browser window.
 		$host = wp_parse_url( $page ? get_permalink( $page ) : home_url( '/' ), PHP_URL_HOST ) . ( $page ? wp_parse_url( get_permalink( $page ), PHP_URL_PATH ) : '' );
@@ -367,7 +370,7 @@ class Lzcrs_Admin {
 			$num = $st[0] ? '<span class="lzcrs-num done" aria-label="' . esc_attr__( 'Done', 'lawzeek-crs-calculator' ) . '">&#10003;</span>' : '<span class="lzcrs-num">' . esc_html( sprintf( '%02d', $i + 1 ) ) . '</span>';
 			echo '<li' . ( $st[0] ? ' class="done"' : '' ) . '>' . $num . '<span><b class="lz-block">' . esc_html( $st[1] ) . '</b><span class="lz-text-[13px] lz-text-ink-muted">' . $st[2] . '</span></span></li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from escaped parts above.
 		}
-		echo '</ol></div></section></div>';
+		echo '</ol><p class="lz-m-0 lz-mt-5 lz-text-[13px]"><a href="' . esc_url( Lzcrs_Onboarding::url() ) . '">' . esc_html__( 'Open the setup guide', 'lawzeek-crs-calculator' ) . '</a></p></div></section></div>';
 		self::close();
 	}
 

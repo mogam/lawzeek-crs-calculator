@@ -289,6 +289,53 @@ if ( $unscoped ) {
 	echo '    unscoped: ' . implode( ' | ', array_slice( $unscoped, 0, 5 ) ) . "\n";
 }
 
+echo "Onboarding\n";
+$ob_saved_done     = get_option( 'lzcrs_onboarded', false );
+$ob_saved_settings = get_option( 'lzcrs_settings' );
+wp_set_current_user( $admins ? $admins[0]->ID : 0 );
+delete_option( 'lzcrs_onboarded' );
+delete_transient( 'lzcrs_activation_redirect' );
+Lzcrs_Onboarding::activate();
+check( 'activation asks for the setup screen once', (bool) get_transient( 'lzcrs_activation_redirect' ) );
+check( 'after activation an admin is sent to the setup screen', false !== strpos( Lzcrs_Onboarding::redirect_url(), 'page=lzcrs-onboarding' ) );
+check( 'the redirect happens only once', '' === Lzcrs_Onboarding::redirect_url() );
+Lzcrs_Onboarding::activate();
+$_GET['activate-multi'] = 'true';
+check( 'no redirect when several plugins are activated together', '' === Lzcrs_Onboarding::redirect_url() );
+unset( $_GET['activate-multi'] );
+Lzcrs_Onboarding::activate();
+wp_set_current_user( 0 );
+check( 'no redirect for users who cannot manage the plugin', '' === Lzcrs_Onboarding::redirect_url() );
+wp_set_current_user( $admins ? $admins[0]->ID : 0 );
+foreach ( array( 1 => 'lzcrs-step-welcome', 2 => 'lzcrs-step-benefits', 3 => 'lzcrs-step-details' ) as $ob_step => $ob_id ) {
+	$_GET['step'] = $ob_step;
+	ob_start();
+	Lzcrs_Onboarding::page();
+	$ob_html = ob_get_clean();
+	check( "setup step $ob_step renders", false !== strpos( $ob_html, 'data-testid="' . $ob_id . '"' ) && false !== strpos( $ob_html, 'aria-current="step"' ) && false !== strpos( $ob_html, 'action=lzcrs_onboarding_skip' ) );
+}
+check( 'setup form has a nonce and the three fields', false !== strpos( $ob_html, 'name="_wpnonce"' ) && false !== strpos( $ob_html, 'name="emails"' ) && false !== strpos( $ob_html, 'name="cta_url"' ) && false !== strpos( $ob_html, 'name="cutoff"' ) );
+unset( $_GET['step'] );
+update_option( 'lzcrs_settings', array_merge( Lzcrs_Settings::defaults(), array( 'phone' => 'required', 'credit' => true ) ) );
+$ob_err = Lzcrs_Onboarding::save( array( 'emails' => 'not-an-email', 'cta_url' => '', 'cutoff' => '510' ) );
+check( 'a bad email is refused and nothing is saved', $ob_err && 500 === (int) Lzcrs_Settings::get()['cutoff'] && ! get_option( 'lzcrs_onboarded' ) );
+$ob_err = Lzcrs_Onboarding::save( array( 'emails' => 'owner@lzcrs.test', 'cta_url' => 'https://calendly.com/northshore/30min', 'cutoff' => '512' ) );
+$ob_s   = Lzcrs_Settings::get();
+check( 'setup saves email, booking link and cutoff', ! $ob_err && 'owner@lzcrs.test' === $ob_s['emails'] && 'https://calendly.com/northshore/30min' === $ob_s['cta_url'] && 512 === (int) $ob_s['cutoff'] );
+check( 'setup keeps the other settings', 'required' === $ob_s['phone'] && true === $ob_s['credit'] );
+check( 'setup is marked done', (bool) get_option( 'lzcrs_onboarded' ) );
+Lzcrs_Onboarding::activate();
+check( 'reactivating after setup does not redirect again', '' === Lzcrs_Onboarding::redirect_url() );
+$_GET['lzcrs_msg'] = 'welcome';
+ob_start();
+Lzcrs_Admin::dashboard_page();
+$ob_dash = ob_get_clean();
+unset( $_GET['lzcrs_msg'] );
+check( 'dashboard welcomes the user after setup and links back to the guide', false !== strpos( $ob_dash, 'data-testid="lzcrs-welcome"' ) && false !== strpos( $ob_dash, 'page=lzcrs-onboarding' ) );
+update_option( 'lzcrs_settings', $ob_saved_settings );
+false === $ob_saved_done ? delete_option( 'lzcrs_onboarded' ) : update_option( 'lzcrs_onboarded', $ob_saved_done );
+wp_set_current_user( 0 );
+
 echo "Uninstall\n";
 cleanup();
 update_option( 'lzcrs_settings', Lzcrs_Settings::defaults() );
@@ -299,8 +346,9 @@ define( 'WP_UNINSTALL_PLUGIN', 'lawzeek-crs-calculator/lawzeek-crs-calculator.ph
 include $uninstall;
 check( 'by default, uninstall keeps leads and settings', (bool) $wpdb->get_var( "SHOW TABLES LIKE '" . Lzcrs_Db::table() . "'" ) && false !== get_option( 'lzcrs_settings', false ) );
 update_option( 'lzcrs_settings', array_merge( Lzcrs_Settings::defaults(), array( 'delete_on_uninstall' => true ) ) );
+update_option( 'lzcrs_onboarded', 1 );
 include $uninstall;
-check( 'with "delete all data", uninstall drops the table and options', ! $wpdb->get_var( "SHOW TABLES LIKE '" . Lzcrs_Db::table() . "'" ) && false === get_option( 'lzcrs_settings', false ) );
+check( 'with "delete all data", uninstall drops the table and options', ! $wpdb->get_var( "SHOW TABLES LIKE '" . Lzcrs_Db::table() . "'" ) && false === get_option( 'lzcrs_settings', false ) && false === get_option( 'lzcrs_onboarded', false ) );
 // Put everything back for the next run.
 Lzcrs_Db::install();
 update_option( 'lzcrs_settings', is_array( $saved_settings ) ? $saved_settings : Lzcrs_Settings::defaults() );
