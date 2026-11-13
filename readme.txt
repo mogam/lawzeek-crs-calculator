@@ -1,5 +1,5 @@
 === Lawzeek CRS Calculator ===
-Contributors: lawzeek
+Contributors: pushpakt
 Tags: crs calculator, express entry, immigration, canada, lead generation
 Requires at least: 6.5
 Tested up to: 7.1
