@@ -135,8 +135,13 @@ class Lzcrs_Db {
 		$rows    = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
 		if ( ! $found ) {
 			list( $band, $band2, $search, $like, $like2 ) = self::filter_args( $f );
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached above; $orderby and $order are whitelisted above.
-			$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE ( %s = '' OR band = %s ) AND ( %s = '' OR name LIKE %s OR email LIKE %s ) ORDER BY $orderby $order, id $order LIMIT %d OFFSET %d", self::table(), $band, $band2, $search, $like, $like2, (int) $limit, (int) $offset ), ARRAY_A );
+			if ( 'ASC' === $order ) {
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+				$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE ( %s = '' OR band = %s ) AND ( %s = '' OR name LIKE %s OR email LIKE %s ) ORDER BY %i ASC, id ASC LIMIT %d OFFSET %d", self::table(), $band, $band2, $search, $like, $like2, $orderby, (int) $limit, (int) $offset ), ARRAY_A );
+			} else {
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+				$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE ( %s = '' OR band = %s ) AND ( %s = '' OR name LIKE %s OR email LIKE %s ) ORDER BY %i DESC, id DESC LIMIT %d OFFSET %d", self::table(), $band, $band2, $search, $like, $like2, $orderby, (int) $limit, (int) $offset ), ARRAY_A );
+			}
 			wp_cache_set( $key, $rows, self::CACHE_GROUP );
 		}
 		return $rows;
