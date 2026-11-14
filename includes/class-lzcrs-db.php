@@ -107,22 +107,17 @@ class Lzcrs_Db {
 	}
 
 	/**
-	 * Builds the WHERE clause for list filters.
+	 * Filter values for the fixed WHERE clause below: an empty value means "no filter".
 	 *
 	 * @param array $f band, search.
-	 * @return string Prepared SQL fragment.
+	 * @return array band, band, search, like, like.
 	 */
-	private static function where( array $f ) {
+	private static function filter_args( array $f ) {
 		global $wpdb;
-		$sql = 'WHERE 1=1';
-		if ( ! empty( $f['band'] ) && in_array( $f['band'], self::BANDS, true ) ) {
-			$sql .= $wpdb->prepare( ' AND band = %s', $f['band'] );
-		}
-		if ( ! empty( $f['search'] ) ) {
-			$like = '%' . $wpdb->esc_like( $f['search'] ) . '%';
-			$sql .= $wpdb->prepare( ' AND (name LIKE %s OR email LIKE %s)', $like, $like );
-		}
-		return $sql;
+		$band   = ! empty( $f['band'] ) && in_array( $f['band'], self::BANDS, true ) ? $f['band'] : '';
+		$search = ! empty( $f['search'] ) ? (string) $f['search'] : '';
+		$like   = '%' . $wpdb->esc_like( $search ) . '%';
+		return array( $band, $band, $search, $like, $like );
 	}
 
 	/**
@@ -139,9 +134,9 @@ class Lzcrs_Db {
 		$key     = self::cache_key( 'query', array( $f, $orderby, $order, (int) $limit, (int) $offset ) );
 		$rows    = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
 		if ( ! $found ) {
-			$where = self::where( $f );
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached above; $where is built with prepare() and $orderby/$order are whitelisted.
-			$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i $where ORDER BY $orderby $order, id $order LIMIT %d OFFSET %d", self::table(), $limit, $offset ), ARRAY_A );
+			list( $band, $band2, $search, $like, $like2 ) = self::filter_args( $f );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached above; $orderby and $order are whitelisted above.
+			$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE ( %s = '' OR band = %s ) AND ( %s = '' OR name LIKE %s OR email LIKE %s ) ORDER BY $orderby $order, id $order LIMIT %d OFFSET %d", self::table(), $band, $band2, $search, $like, $like2, (int) $limit, (int) $offset ), ARRAY_A );
 			wp_cache_set( $key, $rows, self::CACHE_GROUP );
 		}
 		return $rows;
@@ -152,9 +147,9 @@ class Lzcrs_Db {
 		$key = self::cache_key( 'count', array( $f ) );
 		$n   = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
 		if ( ! $found ) {
-			$where = self::where( $f );
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached above; $where is built with prepare().
-			$n = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %i $where", self::table() ) );
+			list( $band, $band2, $search, $like, $like2 ) = self::filter_args( $f );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+			$n = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %i WHERE ( %s = '' OR band = %s ) AND ( %s = '' OR name LIKE %s OR email LIKE %s )", self::table(), $band, $band2, $search, $like, $like2 ) );
 			wp_cache_set( $key, $n, self::CACHE_GROUP );
 		}
 		return (int) $n;
