@@ -234,9 +234,9 @@ class Lzcrs_Admin {
 		header( 'Content-Disposition: attachment; filename=crs-leads-' . gmdate( 'Y-m-d' ) . '.csv' );
 		$out = fopen( 'php://output', 'w' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 		fwrite( $out, "\xEF\xBB\xBF" ); // phpcs:ignore WordPress.WP.AlternativeFunctions -- UTF-8 BOM so Excel shows accents correctly.
-		fputcsv( $out, array( 'id', 'date_utc', 'name', 'email', 'phone', 'crs', 'band', 'pathway', 'status', 'marketing_consent', 'page_url' ) );
+		fputcsv( $out, array( 'id', 'date_utc', 'name', 'email', 'phone', 'crs', 'band', 'pathway', 'status', 'marketing_consent', 'page_url' ), ',', '"', '\\' );
 		foreach ( $rows as $r ) {
-			fputcsv( $out, array_map( array( __CLASS__, 'csv_cell' ), array( $r['id'], $r['created_at'], $r['name'], $r['email'], $r['phone'], $r['total'], $r['band'], $r['pathway'], $r['status'], $r['consent_marketing'] ? 'yes' : 'no', $r['page_url'] ) ) );
+			fputcsv( $out, array_map( array( __CLASS__, 'csv_cell' ), array( $r['id'], $r['created_at'], $r['name'], $r['email'], $r['phone'], $r['total'], $r['band'], $r['pathway'], $r['status'], $r['consent_marketing'] ? 'yes' : 'no', $r['page_url'] ) ), ',', '"', '\\' );
 		}
 		fclose( $out ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 		exit;

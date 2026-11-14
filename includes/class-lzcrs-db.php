@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * All database access for leads. Every query uses $wpdb->prepare or fixed SQL.
+ * All database access for leads. Every query uses $wpdb->prepare, with %i for the table name.
  */
 class Lzcrs_Db {
 	const DB_VERSION = '1';
@@ -60,24 +60,50 @@ class Lzcrs_Db {
 		}
 	}
 
+	/*
+	 * Leads live in the plugin's own table, so WordPress has no API for them and direct queries are needed.
+	 * Every query is prepared, with the table name passed as an identifier (%i). Reads are kept in the object
+	 * cache and invalidated whenever a lead is added, changed or deleted.
+	 */
+
+	const CACHE_GROUP = 'lzcrs_leads';
+
+	/** Cache key for a read, tied to the last time any lead changed. */
+	private static function cache_key( $name, array $args ) {
+		return $name . ':' . md5( (string) wp_json_encode( $args ) ) . ':' . wp_cache_get_last_changed( self::CACHE_GROUP );
+	}
+
+	/** Marks every cached read as out of date. */
+	public static function flush_cache() {
+		wp_cache_set_last_changed( self::CACHE_GROUP );
+	}
+
 	/**
 	 * @param array $lead Clean lead data.
 	 * @return int|false New id.
 	 */
 	public static function insert( array $lead ) {
 		global $wpdb;
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; reads are cached and flushed below.
 		$ok = $wpdb->insert(
 			self::table(),
 			$lead,
 			array( '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s', '%s' )
 		);
+		self::flush_cache();
 		return $ok ? (int) $wpdb->insert_id : false;
 	}
 
 	public static function get( $id ) {
 		global $wpdb;
-		$table = self::table();
-		return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $table WHERE id = %d", $id ), ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name is fixed.
+		$key = self::cache_key( 'get', array( (int) $id ) );
+		$row = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
+		if ( ! $found ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+			$row = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %i WHERE id = %d', self::table(), $id ), ARRAY_A );
+			wp_cache_set( $key, $row, self::CACHE_GROUP );
+		}
+		return $row;
 	}
 
 	/**
@@ -108,27 +134,42 @@ class Lzcrs_Db {
 	 */
 	public static function query( array $f, $orderby = 'created_at', $order = 'desc', $limit = 20, $offset = 0 ) {
 		global $wpdb;
-		$table   = self::table();
 		$orderby = in_array( $orderby, array( 'created_at', 'total' ), true ) ? $orderby : 'created_at';
 		$order   = 'asc' === strtolower( (string) $order ) ? 'ASC' : 'DESC';
-		$where   = self::where( $f );
-		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table, where (prepared) and order are fixed/whitelisted.
-		return $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $table $where ORDER BY $orderby $order, id $order LIMIT %d OFFSET %d", $limit, $offset ), ARRAY_A );
+		$key     = self::cache_key( 'query', array( $f, $orderby, $order, (int) $limit, (int) $offset ) );
+		$rows    = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
+		if ( ! $found ) {
+			$where = self::where( $f );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached above; $where is built with prepare() and $orderby/$order are whitelisted.
+			$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i $where ORDER BY $orderby $order, id $order LIMIT %d OFFSET %d", self::table(), $limit, $offset ), ARRAY_A );
+			wp_cache_set( $key, $rows, self::CACHE_GROUP );
+		}
+		return $rows;
 	}
 
 	public static function count( array $f = array() ) {
 		global $wpdb;
-		$table = self::table();
-		$where = self::where( $f );
-		return (int) $wpdb->get_var( "SELECT COUNT(*) FROM $table $where" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- where is prepared.
+		$key = self::cache_key( 'count', array( $f ) );
+		$n   = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
+		if ( ! $found ) {
+			$where = self::where( $f );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached above; $where is built with prepare().
+			$n = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %i $where", self::table() ) );
+			wp_cache_set( $key, $n, self::CACHE_GROUP );
+		}
+		return (int) $n;
 	}
 
 	/** Numbers for the dashboard: all leads, leads since a UTC time, hot leads, average score. */
 	public static function stats( $since_utc ) {
 		global $wpdb;
-		$table = self::table();
-		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name is fixed.
-		$row = $wpdb->get_row( $wpdb->prepare( "SELECT COUNT(*) AS total, SUM(created_at >= %s) AS recent, SUM(band = 'hot') AS hot, AVG(total) AS avg_score FROM $table", $since_utc ), ARRAY_A );
+		$key = self::cache_key( 'stats', array( (string) $since_utc ) );
+		$row = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
+		if ( ! $found ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+			$row = $wpdb->get_row( $wpdb->prepare( "SELECT COUNT(*) AS total, SUM(created_at >= %s) AS recent, SUM(band = 'hot') AS hot, AVG(total) AS avg_score FROM %i", $since_utc, self::table() ), ARRAY_A );
+			wp_cache_set( $key, $row, self::CACHE_GROUP );
+		}
 		return array(
 			'total'  => (int) $row['total'],
 			'recent' => (int) $row['recent'],
@@ -154,9 +195,13 @@ class Lzcrs_Db {
 			$out[ $today->modify( "-$i days" )->format( 'Y-m-d' ) ] = 0;
 		}
 		$since = $today->modify( '-' . ( $days - 1 ) . ' days' )->setTimezone( $utc )->format( 'Y-m-d H:i:s' );
-		$table = self::table();
-		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name is fixed.
-		$rows = $wpdb->get_col( $wpdb->prepare( "SELECT created_at FROM $table WHERE created_at >= %s", $since ) );
+		$key   = self::cache_key( 'daily', array( $since ) );
+		$rows  = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
+		if ( ! $found ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+			$rows = $wpdb->get_col( $wpdb->prepare( 'SELECT created_at FROM %i WHERE created_at >= %s', self::table(), $since ) );
+			wp_cache_set( $key, $rows, self::CACHE_GROUP );
+		}
 		foreach ( (array) $rows as $when ) {
 			$day = ( new DateTimeImmutable( $when, $utc ) )->setTimezone( $tz )->format( 'Y-m-d' );
 			if ( isset( $out[ $day ] ) ) {
@@ -171,7 +216,10 @@ class Lzcrs_Db {
 		if ( ! in_array( $status, self::STATUSES, true ) ) {
 			return false;
 		}
-		return false !== $wpdb->update( self::table(), array( 'status' => $status ), array( 'id' => (int) $id ), array( '%s' ), array( '%d' ) );
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- the plugin's own table; cached reads are flushed below.
+		$ok = false !== $wpdb->update( self::table(), array( 'status' => $status ), array( 'id' => (int) $id ), array( '%s' ), array( '%d' ) );
+		self::flush_cache();
+		return $ok;
 	}
 
 	public static function delete( array $ids ) {
@@ -180,21 +228,29 @@ class Lzcrs_Db {
 		if ( ! $ids ) {
 			return 0;
 		}
-		$table = self::table();
-		$in    = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
-		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- fixed table name; $in is only "%d" placeholders, one per id.
-		return (int) $wpdb->query( $wpdb->prepare( "DELETE FROM $table WHERE id IN ($in)", $ids ) );
+		$in = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- the plugin's own table, cached reads flushed below; $in is only "%d" placeholders, one per id.
+		$n = (int) $wpdb->query( $wpdb->prepare( "DELETE FROM %i WHERE id IN ($in)", array_merge( array( self::table() ), $ids ) ) );
+		self::flush_cache();
+		return $n;
 	}
 
 	public static function by_email( $email ) {
 		global $wpdb;
-		$table = self::table();
-		return $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $table WHERE email = %s ORDER BY id", strtolower( $email ) ), ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$key  = self::cache_key( 'by_email', array( strtolower( $email ) ) );
+		$rows = wp_cache_get( $key, self::CACHE_GROUP, false, $found );
+		if ( ! $found ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- the plugin's own table; cached above.
+			$rows = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %i WHERE email = %s ORDER BY id', self::table(), strtolower( $email ) ), ARRAY_A );
+			wp_cache_set( $key, $rows, self::CACHE_GROUP );
+		}
+		return $rows;
 	}
 
 	public static function drop() {
 		global $wpdb;
-		$table = self::table();
-		$wpdb->query( "DROP TABLE IF EXISTS $table" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery.SchemaChange
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange -- removes the plugin's own table on request.
+		$wpdb->query( $wpdb->prepare( 'DROP TABLE IF EXISTS %i', self::table() ) );
+		self::flush_cache();
 	}
 }

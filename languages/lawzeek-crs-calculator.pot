@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lawzeek CRS Calculator 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 19:26+0530\n"
+"POT-Creation-Date: 2026-11-14 19:39+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,7 +259,7 @@ msgstr ""
 msgid "Setup progress"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:367 includes/class-lzcrs-frontend.php:132
+#: includes/class-lzcrs-admin.php:367 includes/class-lzcrs-frontend.php:131
 msgid "Done"
 msgstr ""
 
@@ -291,7 +291,7 @@ msgstr ""
 msgid "Lead not found"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:447 includes/class-lzcrs-frontend.php:168
+#: includes/class-lzcrs-admin.php:447 includes/class-lzcrs-frontend.php:167
 msgid "Estimated CRS score"
 msgstr ""
 
@@ -307,12 +307,12 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:455 includes/class-lzcrs-frontend.php:177
+#: includes/class-lzcrs-admin.php:455 includes/class-lzcrs-frontend.php:176
 msgid "Age"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:456 includes/class-lzcrs-frontend.php:122
-#: includes/class-lzcrs-frontend.php:178
+#: includes/class-lzcrs-admin.php:456 includes/class-lzcrs-frontend.php:121
+#: includes/class-lzcrs-frontend.php:177
 msgid "Education"
 msgstr ""
 
@@ -324,7 +324,7 @@ msgstr ""
 msgid "IELTS L / R / W / S"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:459 includes/class-lzcrs-frontend.php:180
+#: includes/class-lzcrs-admin.php:459 includes/class-lzcrs-frontend.php:179
 msgid "French"
 msgstr ""
 
@@ -348,15 +348,15 @@ msgstr ""
 msgid "Likely pathway"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:182
+#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:181
 msgid "Core human capital"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:183
+#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:182
 msgid "Skill transferability"
 msgstr ""
 
-#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:184
+#: includes/class-lzcrs-admin.php:473 includes/class-lzcrs-frontend.php:183
 msgid "Additional points"
 msgstr ""
 
@@ -594,307 +594,307 @@ msgstr ""
 msgid "Save settings"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:53
+#: includes/class-lzcrs-frontend.php:52
 msgid "CRS score check"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:57
+#: includes/class-lzcrs-frontend.php:56
 msgid "CRS calculator by Lawzeek"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:63
+#: includes/class-lzcrs-frontend.php:62
 msgid "Please turn on JavaScript to use the CRS calculator."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:98 includes/class-lzcrs-frontend.php:106
+#: includes/class-lzcrs-frontend.php:97 includes/class-lzcrs-frontend.php:105
 msgid "None or under 1 year"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:99 includes/class-lzcrs-frontend.php:107
+#: includes/class-lzcrs-frontend.php:98 includes/class-lzcrs-frontend.php:106
 msgid "1 year"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:100 includes/class-lzcrs-frontend.php:108
+#: includes/class-lzcrs-frontend.php:99 includes/class-lzcrs-frontend.php:107
 msgid "2 years"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:101
+#: includes/class-lzcrs-frontend.php:100
 msgid "3 years"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:102
+#: includes/class-lzcrs-frontend.php:101
 msgid "4 years"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:103
+#: includes/class-lzcrs-frontend.php:102
 msgid "5 years or more"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:109
+#: includes/class-lzcrs-frontend.php:108
 msgid "3 years or more"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:121
+#: includes/class-lzcrs-frontend.php:120
 msgid "About you"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:123
+#: includes/class-lzcrs-frontend.php:122
 msgid "Language tests"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:124
+#: includes/class-lzcrs-frontend.php:123
 msgid "Work experience"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:125
+#: includes/class-lzcrs-frontend.php:124
 msgid "A few extras"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:126
+#: includes/class-lzcrs-frontend.php:125
 msgid "Your result is ready"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:127
+#: includes/class-lzcrs-frontend.php:126
 msgid "Your CRS estimate"
 msgstr ""
 
 #. translators: %d: step number from 1 to 5
-#: includes/class-lzcrs-frontend.php:130
+#: includes/class-lzcrs-frontend.php:129
 #, php-format
 msgid "Step %d of 5"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:131
+#: includes/class-lzcrs-frontend.php:130
 msgid "Almost done"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:133
+#: includes/class-lzcrs-frontend.php:132
 msgid "Back"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:134
+#: includes/class-lzcrs-frontend.php:133
 msgid "Next"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:135
+#: includes/class-lzcrs-frontend.php:134
 msgid "Show my score"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:136
+#: includes/class-lzcrs-frontend.php:135
 msgid "Calculating your score…"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:137
+#: includes/class-lzcrs-frontend.php:136
 msgid "Start over"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:138
+#: includes/class-lzcrs-frontend.php:137
 msgid "Your age"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:139
+#: includes/class-lzcrs-frontend.php:138
 msgid "Points peak between 20 and 29."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:140
+#: includes/class-lzcrs-frontend.php:139
 msgid ""
 "This calculator scores single applicants. A consultant can review spouse "
 "factors with you."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:141
+#: includes/class-lzcrs-frontend.php:140
 msgid "Highest education"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:142
+#: includes/class-lzcrs-frontend.php:141
 msgid "Education completed in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:143
+#: includes/class-lzcrs-frontend.php:142
 msgid "IELTS General Training scores"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:144
+#: includes/class-lzcrs-frontend.php:143
 msgid "Listening"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:145
+#: includes/class-lzcrs-frontend.php:144
 msgid "Reading"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:146
+#: includes/class-lzcrs-frontend.php:145
 msgid "Writing"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:147
+#: includes/class-lzcrs-frontend.php:146
 msgid "Speaking"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:148 includes/class-lzcrs-labels.php:77
+#: includes/class-lzcrs-frontend.php:147 includes/class-lzcrs-labels.php:77
 msgid "Below 4"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:149
+#: includes/class-lzcrs-frontend.php:148
 msgid "French test"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:150
+#: includes/class-lzcrs-frontend.php:149
 msgid "Skilled work experience in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:151
+#: includes/class-lzcrs-frontend.php:150
 msgid "Skilled work experience outside Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:152
+#: includes/class-lzcrs-frontend.php:151
 msgid "Last 10 years, full-time, TEER 0–3 jobs."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:153
+#: includes/class-lzcrs-frontend.php:152
 msgid "I have a provincial nomination"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:154
+#: includes/class-lzcrs-frontend.php:153
 msgid "A PNP certificate from a province or territory"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:155
+#: includes/class-lzcrs-frontend.php:154
 msgid "I have a brother or sister in Canada"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:156
+#: includes/class-lzcrs-frontend.php:155
 msgid "Citizen or permanent resident, 18 or older"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:157
+#: includes/class-lzcrs-frontend.php:156
 msgid ""
 "Enter your details to see your score, a full breakdown and the fastest ways "
 "to raise it."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:158
+#: includes/class-lzcrs-frontend.php:157
 msgid "Full name"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:159 includes/class-lzcrs-list-table.php:44
+#: includes/class-lzcrs-frontend.php:158 includes/class-lzcrs-list-table.php:44
 msgid "Email"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:160
+#: includes/class-lzcrs-frontend.php:159
 msgid "Phone number"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:161
+#: includes/class-lzcrs-frontend.php:160
 msgid "(optional)"
 msgstr ""
 
 #. translators: %s: website name
-#: includes/class-lzcrs-frontend.php:163
+#: includes/class-lzcrs-frontend.php:162
 #, php-format
 msgid "%s may use my answers to assess my options and contact me about them."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:164
+#: includes/class-lzcrs-frontend.php:163
 msgid "Privacy policy"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:165
+#: includes/class-lzcrs-frontend.php:164
 msgid "Send me updates that could affect my chances."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:166
+#: includes/class-lzcrs-frontend.php:165
 msgid "Optional. You can stop them at any time."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:167
+#: includes/class-lzcrs-frontend.php:166
 msgid "Leave this field empty"
 msgstr ""
 
 #. translators: 1: points difference, 2: recent cutoff score
-#: includes/class-lzcrs-frontend.php:170
+#: includes/class-lzcrs-frontend.php:169
 #, php-format
 msgid "%1$d above the recent cutoff of %2$d"
 msgstr ""
 
 #. translators: 1: points difference, 2: recent cutoff score
-#: includes/class-lzcrs-frontend.php:172
+#: includes/class-lzcrs-frontend.php:171
 #, php-format
 msgid "%1$d below the recent cutoff of %2$d"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:173
+#: includes/class-lzcrs-frontend.php:172
 msgid "Fastest ways to raise your score"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:174
+#: includes/class-lzcrs-frontend.php:173
 msgid "reaches the cutoff"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:175
+#: includes/class-lzcrs-frontend.php:174
 msgid "Full breakdown"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:179
+#: includes/class-lzcrs-frontend.php:178
 msgid "English"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:181
+#: includes/class-lzcrs-frontend.php:180
 msgid "Canadian work experience"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:185
+#: includes/class-lzcrs-frontend.php:184
 msgid "Total"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:187
+#: includes/class-lzcrs-frontend.php:186
 msgid "Next step"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:188
+#: includes/class-lzcrs-frontend.php:187
 msgid "Talk to a licensed consultant"
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:189
+#: includes/class-lzcrs-frontend.php:188
 msgid "Get a personal review of your profile and the right next step for you."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:190
+#: includes/class-lzcrs-frontend.php:189
 msgid "Open the booking page in a new tab"
 msgstr ""
 
 #. translators: %s: website name
-#: includes/class-lzcrs-frontend.php:192
+#: includes/class-lzcrs-frontend.php:191
 #, php-format
 msgid ""
 "This is an estimate, not legal advice. Your official score is set by IRCC "
 "when you submit an Express Entry profile. Provided by %s."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:193
+#: includes/class-lzcrs-frontend.php:192
 msgid "Enter an age between 16 and 80."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:194 includes/class-lzcrs-rest.php:70
+#: includes/class-lzcrs-frontend.php:193 includes/class-lzcrs-rest.php:70
 msgid "Enter your name."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:195 includes/class-lzcrs-rest.php:73
+#: includes/class-lzcrs-frontend.php:194 includes/class-lzcrs-rest.php:73
 msgid "Enter a valid email address, like name@example.com."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:196 includes/class-lzcrs-rest.php:78
+#: includes/class-lzcrs-frontend.php:195 includes/class-lzcrs-rest.php:78
 msgid "Enter your phone number."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:197 includes/class-lzcrs-rest.php:83
+#: includes/class-lzcrs-frontend.php:196 includes/class-lzcrs-rest.php:83
 msgid "Tick the box to agree to be contacted, so we can show your result."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:198 includes/class-lzcrs-rest.php:115
+#: includes/class-lzcrs-frontend.php:197 includes/class-lzcrs-rest.php:115
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/class-lzcrs-frontend.php:199
+#: includes/class-lzcrs-frontend.php:198
 msgid "Could not reach the website. Check your connection and try again."
 msgstr ""
 
