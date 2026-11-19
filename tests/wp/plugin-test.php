@@ -42,6 +42,7 @@ $GLOBALS['lzcrs_host'] = wp_parse_url( home_url(), PHP_URL_HOST );
 function cleanup() {
 	global $wpdb;
 	$wpdb->query( $wpdb->prepare( 'DELETE FROM ' . Lzcrs_Db::table() . ' WHERE email LIKE %s', '%@lzcrs.test' ) );
+	Lzcrs_Db::flush_cache();
 	$wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE '\\_transient\\_%lzcrs\\_rl\\_%'" );
 }
 

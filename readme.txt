@@ -53,10 +53,10 @@ You get every result as a lead in your WordPress dashboard, with an email alert.
 * **Spam protection:** a hidden honeypot field and a rate limit. No CAPTCHA, and no third-party service.
 * **Easy to add:** a "CRS Calculator" block, or the shortcode `[lawzeek_crs]`.
 * **Fast and self-contained:**
-  * no external requests;
+  * the plugin makes no external requests of its own and sets no cookies;
   * no tracking;
-  * no cookies;
   * scripts load only on pages that show the calculator.
+  * The one exception is optional: if you choose to show your Calendly calendar inside the result, Calendly's page loads in the visitor's browser and Calendly may set cookies and show its own cookie notice. See "External services" below.
 * **Translation-ready.**
 
 = Source code =
@@ -70,10 +70,6 @@ The full source, build tools and tests are public on GitHub: https://github.com/
 = Disclaimer =
 
 The calculator gives an estimate, not legal advice. The official score is calculated by IRCC when a candidate submits an Express Entry profile. Keep the "recent cutoff" setting up to date after each draw.
-
-= Coming later =
-
-We are building Lawzeek for immigration consultants, a separate service with Express Entry draw alerts, online booking, a website chatbot and a team lead dashboard. It is not available yet. This plugin works fully on its own, has no locked features and never requires an account.
 
 == Installation ==
 
@@ -167,6 +163,6 @@ This plugin stores the data visitors enter in the calculator in your WordPress d
 
 It also stores a one-way hash of the visitor's IP address, used for rate limiting only.
 
-The plugin does not send this data to Lawzeek or to any third party, and makes no external HTTP requests.
+The plugin does not send this data to Lawzeek or to any third party, and makes no external HTTP requests of its own. Every feature is free and works without an account.
 
 If you choose to show your Calendly calendar inside the result, Calendly's booking page loads in the visitor's browser when they reach their result. See "External services" below. With the default "Button" option, nothing loads until the visitor clicks. Site owners can export or erase a visitor's data from Tools → Export / Erase Personal Data.

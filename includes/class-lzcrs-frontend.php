@@ -26,7 +26,6 @@ class Lzcrs_Frontend {
 			LZCRS_DIR . 'blocks/crs-calculator',
 			array( 'render_callback' => array( __CLASS__, 'render_block' ) )
 		);
-		load_plugin_textdomain( 'lawzeek-crs-calculator', false, dirname( plugin_basename( LZCRS_FILE ) ) . '/languages' );
 	}
 
 	/** @param array $attrs Block attributes. */
