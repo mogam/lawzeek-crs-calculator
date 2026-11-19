@@ -117,6 +117,7 @@ class Lzcrs_Admin {
 		} else {
 			echo '<span class="lzcrs-live"><span class="lzcrs-dot" aria-hidden="true"></span>' . esc_html__( 'Not on a page yet', 'lawzeek-crs-calculator' ) . '</span>';
 		}
+		echo '<a class="lzcrs-site-link" data-testid="lzcrs-site-link" href="' . esc_url( LZCRS_SITE_URL ) . '" target="_blank" rel="noopener">lawzeek.com' . self::ICON_OPEN . '<span class="screen-reader-text">' . esc_html__( '(opens in a new tab)', 'lawzeek-crs-calculator' ) . '</span></a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
 		echo '</header><div class="lzcrs-page">';
 	}
 

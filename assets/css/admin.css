@@ -189,6 +189,27 @@
   background-color: rgb(30 166 114 / var(--tw-bg-opacity, 1));
 }
 
+.lzcrs-app  .lzcrs-site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 13px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(66 84 102 / var(--tw-text-opacity, 1));
+  text-decoration-line: none;
+}
+
+.lzcrs-app  .lzcrs-site-link:hover,:is( .lzcrs-app .lzcrs-site-link:focus) {
+  --tw-text-opacity: 1;
+  color: rgb(70 68 184 / var(--tw-text-opacity, 1));
+}
+
+.lzcrs-app :is( .lzcrs-site-link svg) {
+  height: 1rem;
+  width: 1rem;
+}
+
 .lzcrs-app .lzcrs-live.on .lzcrs-dot::after {
   content: "";
 }

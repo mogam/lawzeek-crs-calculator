@@ -37,6 +37,9 @@
   .lzcrs-app .lzcrs-live.on, .lzcrs-app a.lzcrs-live.on { @apply lz-bg-mint-50 lz-text-mint-700; }
   .lzcrs-app .lzcrs-dot { @apply lz-relative lz-block lz-w-2 lz-h-2 lz-rounded-full lz-bg-ink-faint lz-shrink-0; }
   .lzcrs-app .lzcrs-live.on .lzcrs-dot { @apply lz-bg-mint-500; }
+  .lzcrs-app .lzcrs-site-link { @apply lz-inline-flex lz-items-center lz-gap-1.5 lz-text-[13px] lz-font-medium lz-text-ink-muted lz-no-underline; }
+  .lzcrs-app .lzcrs-site-link:hover, .lzcrs-app .lzcrs-site-link:focus { @apply lz-text-indigo-700; }
+  .lzcrs-app .lzcrs-site-link svg { @apply lz-w-4 lz-h-4; }
   .lzcrs-app .lzcrs-live.on .lzcrs-dot::after { content: ""; @apply lz-absolute lz-inset-0 lz-rounded-full lz-bg-mint-500; animation: lzcrs-ping 1.6s ease-out infinite; }
   @keyframes lzcrs-ping { from { transform: scale(1); opacity: .7; } to { transform: scale(2.8); opacity: 0; } }
 
