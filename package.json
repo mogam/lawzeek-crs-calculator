@@ -1,6 +1,6 @@
 {
   "name": "lawzeek-crs-calculator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Development tools for the Lawzeek CRS Calculator WordPress plugin. Not shipped in the plugin.",
   "license": "GPL-2.0-or-later",
