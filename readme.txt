@@ -4,7 +4,7 @@ Tags: crs calculator, express entry, immigration, canada, lead generation
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ The calculator gives an estimate, not legal advice. The official score is calcul
 == Installation ==
 
 1. Install and activate the plugin (Plugins → Add New → search "Lawzeek CRS Calculator").
-2. Go to **Lawzeek → Settings** in the admin menu. Check the email that receives new leads, and set the recent Express Entry cutoff.
+2. A short guided setup opens. Enter the email that receives new leads, your booking link and the recent Express Entry cutoff. You can skip it and change everything later in **Lawzeek → Settings**.
 3. Edit any page and add the **CRS Calculator** block, or paste `[lawzeek_crs]`.
 4. Visit the page and try it. Your test appears under **Lawzeek → Leads**.
 
@@ -124,8 +124,13 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 4. Leads list with Hot, Warm and Cold ratings, search, filters and CSV export.
 5. A lead's profile, score breakdown, status and consent record.
 6. Settings: leads, scoring, booking, look, privacy.
+7. The guided setup that opens once after activation.
 
 == Changelog ==
+
+= 1.1.0 =
+* New: a short guided setup opens once after activation (welcome, benefits, alert email, booking link and cutoff). You can skip it or reopen it from the dashboard.
+* New: a lawzeek.com link and the plugin version in the top bar.
 
 = 1.0.0 =
 * First release:
@@ -136,6 +141,9 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
   * privacy tools.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Adds a short guided setup for new installs. Existing settings are kept.
 
 = 1.0.0 =
 First release.

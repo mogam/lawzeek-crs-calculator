@@ -15,6 +15,7 @@ if ( is_array( $lzcrs_settings ) && ! empty( $lzcrs_settings['delete_on_uninstal
 	$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}lzcrs_leads" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 	delete_option( 'lzcrs_settings' );
 	delete_option( 'lzcrs_db_version' );
+	delete_option( 'lzcrs_onboarded' );
 	delete_metadata( 'user', 0, 'lzcrs_dismissed_info', '', true );
 	$wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE '\\_transient\\_lzcrs\\_%' OR option_name LIKE '\\_transient\\_timeout\\_lzcrs\\_%'" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 }
