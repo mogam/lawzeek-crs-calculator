@@ -1,0 +1,29 @@
+# Updates only the WordPress.org listing (banner, icon, screenshots in .wordpress-org/ and readme.txt) without a new
+# plugin version. Run it by hand from the Actions tab ("WordPress.org assets" → Run workflow) on main. It waits in the
+# "wordpress-org" environment until an approved reviewer clicks Approve, like the release deploy.
+name: WordPress.org assets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  assets:
+    name: Update WordPress.org assets and readme
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: wordpress-org
+      url: https://wordpress.org/plugins/lawzeek-crs-calculator/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: 10up/action-wordpress-plugin-asset-update@2480306f6f693672726d08b5917ea114cb2825f7 # 2.2.0
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: lawzeek-crs-calculator
+          ASSETS_DIR: .wordpress-org
+          IGNORE_OTHER_FILES: true
