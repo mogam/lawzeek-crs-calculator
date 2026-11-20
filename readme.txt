@@ -130,7 +130,7 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 
 = 1.1.0 =
 * New: a short guided setup opens once after activation (welcome, benefits, alert email, booking link and cutoff). You can skip it or reopen it from the dashboard.
-* New: a lawzeek.com link in the plugin's top bar.
+* New: a lawzeek.com link and the plugin version in the top bar.
 
 = 1.0.0 =
 * First release:

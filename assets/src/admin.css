@@ -40,6 +40,7 @@
   .lzcrs-app .lzcrs-site-link { @apply lz-inline-flex lz-items-center lz-gap-1.5 lz-text-[13px] lz-font-medium lz-text-ink-muted lz-no-underline; }
   .lzcrs-app .lzcrs-site-link:hover, .lzcrs-app .lzcrs-site-link:focus { @apply lz-text-indigo-700; }
   .lzcrs-app .lzcrs-site-link svg { @apply lz-w-4 lz-h-4; }
+  .lzcrs-app .lzcrs-version { @apply lz-inline-flex lz-items-center lz-px-2 lz-py-0.5 lz-rounded-md lz-border lz-border-solid lz-border-ink-line lz-bg-white lz-text-[12px] lz-font-medium lz-text-ink-muted; font-variant-numeric: tabular-nums; }
   .lzcrs-app .lzcrs-live.on .lzcrs-dot::after { content: ""; @apply lz-absolute lz-inset-0 lz-rounded-full lz-bg-mint-500; animation: lzcrs-ping 1.6s ease-out infinite; }
   @keyframes lzcrs-ping { from { transform: scale(1); opacity: .7; } to { transform: scale(2.8); opacity: 0; } }
 

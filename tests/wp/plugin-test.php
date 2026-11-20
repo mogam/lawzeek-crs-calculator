@@ -333,6 +333,8 @@ Lzcrs_Admin::dashboard_page();
 $ob_dash = ob_get_clean();
 unset( $_GET['lzcrs_msg'] );
 check( 'dashboard welcomes the user after setup and links back to the guide', false !== strpos( $ob_dash, 'data-testid="lzcrs-welcome"' ) && false !== strpos( $ob_dash, 'page=lzcrs-onboarding' ) );
+check( 'top bar links to lawzeek.com in a new tab', 1 === preg_match( '#<a class="lzcrs-site-link"[^>]*href="https://lawzeek\.com/"[^>]*target="_blank" rel="noopener"#', $ob_dash ) );
+check( 'top bar shows the plugin version', false !== strpos( $ob_dash, '>v' . LZCRS_VERSION . '</span>' ) );
 update_option( 'lzcrs_settings', $ob_saved_settings );
 false === $ob_saved_done ? delete_option( 'lzcrs_onboarded' ) : update_option( 'lzcrs_onboarded', $ob_saved_done );
 wp_set_current_user( 0 );
