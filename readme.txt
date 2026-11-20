@@ -124,6 +124,7 @@ A hidden field catches most bots. Each visitor can submit up to 10 times in 10 m
 4. Leads list with Hot, Warm and Cold ratings, search, filters and CSV export.
 5. A lead's profile, score breakdown, status and consent record.
 6. Settings: leads, scoring, booking, look, privacy.
+7. The guided setup that opens once after activation.
 
 == Changelog ==
 
